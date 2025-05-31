@@ -436,32 +436,7 @@ export default function PortfolioNavigation() {
         </AnimatedSection>
 
         {/* Footer */}
-        <AnimatedSection className="mt-32 border-t border-white/20 py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} Mohamed Yahya Lazar. Tous droits réservés.
-              </div>
-              <div className="flex space-x-6">
-                {[
-                  { label: "GitHub", href: "https://github.com/Yahyalazar" },
-                  { label: "LinkedIn", href: "https://linkedin.com/in/med-yahya-lazar" },
-                  { label: "Contact", href: "mailto:mohamedyahyalazar@gmail.com" },
-                ].map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.href}
-                    className="text-gray-400 hover:text-pink-300 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {link.label}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
+        
       </main>
     </div>
   )

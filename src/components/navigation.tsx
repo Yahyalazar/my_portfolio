@@ -5,9 +5,15 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, ChevronDown, Download, Mail } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import {
+  Sheet,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetContent,
+} from "@/components/ui/sheet"
 
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const navigationItems = [
@@ -68,9 +74,8 @@ export function Navigation() {
             >
               <Link
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-300 relative py-2 group ${
-                  pathname === item.href ? "text-pink-400" : "text-gray-300"
-                }`}
+                className={`text-sm font-medium transition-all duration-300 relative py-2 group ${pathname === item.href ? "text-pink-400" : "text-gray-300"
+                  }`}
               >
                 <motion.span whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
                   {item.name}
@@ -198,21 +203,15 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
-                  <Menu className="h-6 w-6" />
-                </motion.div>
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </motion.div>
+            <Button variant="ghost" size="icon" className="relative">
+              <Menu className="h-6 w-6 text-gray-300" />
+            </Button>
           </SheetTrigger>
+          <SheetContent side="left" className="w-72 bg-black/90 backdrop-blur-xl border-white/10">
+            <SheetHeader>
+              <SheetTitle className="text-white">Navigation</SheetTitle>
+            </SheetHeader>
 
-          <SheetContent side="right" className="w-80 bg-black/95 backdrop-blur-xl border-white/10">
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -249,9 +248,8 @@ export function Navigation() {
                       <Link
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`text-lg font-medium transition-colors p-4 rounded-xl block ${
-                          pathname === item.href ? "text-pink-400 bg-white/5" : "text-gray-300"
-                        }`}
+                        className={`text-lg font-medium transition-colors p-4 rounded-xl block ${pathname === item.href ? "text-pink-400 bg-white/5" : "text-gray-300"
+                          }`}
                       >
                         <motion.span
                           whileHover={{ scale: 1.05, x: 10 }}

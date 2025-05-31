@@ -1,52 +1,513 @@
+"use client"
+
+import type React from "react"
+
 import { Navigation } from "@/components/navigation"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, Star } from "lucide-react"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef, useState } from "react"
+import Image from "next/image"
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+}
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+}
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
+
+function AnimatedSection({ 
+  children, 
+  className = "", 
+  variant = fadeInUp 
+}: { 
+  children: React.ReactNode;
+  className?: string;
+  variant?: typeof fadeInUp;
+}) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={variant}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    setIsSubmitting(false)
+    // Reset form
+    setFormData({ name: "", email: "", subject: "", message: "" })
+  }
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email",
+      value: "mohamedyahyalazar@gmail.com",
+      href: "mailto:mohamedyahyalazar@gmail.com",
+      description: "Envoyez-moi un email",
+    },
+    {
+      icon: Phone,
+      title: "Téléphone",
+      value: "+212 691 844 523",
+      href: "tel:+212691844523",
+      description: "Appelez-moi directement",
+    },
+    {
+      icon: MapPin,
+      title: "Localisation",
+      value: "Settat - Casablanca, Maroc",
+      href: "#",
+      description: "Ma localisation",
+    },
+    {
+      icon: Clock,
+      title: "Disponibilité",
+      value: "Lun - Ven, 9h - 18h",
+      href: "#",
+      description: "Heures de travail",
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-20 left-10 w-32 h-32 bg-pink-500/10 rounded-full blur-xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.7, 0.4],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
       <Navigation />
-      <main className="container mx-auto px-6 md:px-8 lg:px-12 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">Contact</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 space-y-6">
-              <h2 className="text-2xl font-semibold text-pink-300">Contactez-moi</h2>
-              <div className="space-y-4">
-                <a href="mailto:mohamedyahyalazar@gmail.com" className="flex items-center space-x-3 text-gray-200 hover:text-pink-300 transition-colors">
-                  <Mail className="h-5 w-5" />
-                  <span>mohamedyahyalazar@gmail.com</span>
-                </a>
-                <a href="tel:+212691844523" className="flex items-center space-x-3 text-gray-200 hover:text-pink-300 transition-colors">
-                  <Phone className="h-5 w-5" />
-                  <span>+212 691 844 523</span>
-                </a>
-                <div className="flex items-center space-x-3 text-gray-200">
-                  <MapPin className="h-5 w-5" />
-                  <span>Maroc</span>
-                </div>
+
+      <main className="container mx-auto px-6 md:px-8 lg:px-12 py-20 relative">
+        {/* Hero Section */}
+        <AnimatedSection className="text-center mb-20">
+          <motion.div
+            className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-lg rounded-full text-sm font-medium text-white border border-white/20 mb-8"
+            variants={fadeInUp}
+          >
+            <motion.span
+              className="w-2 h-2 bg-emerald-400 rounded-full mr-2"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            />
+            Disponible pour de nouveaux projets
+          </motion.div>
+
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
+            variants={fadeInUp}
+          >
+            Contactez-moi
+          </motion.h1>
+
+          <motion.p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" variants={fadeInUp}>
+            Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter de vos
+            idées et de voir comment nous pouvons collaborer.
+          </motion.p>
+        </AnimatedSection>
+
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Contact Info & Illustration */}
+            <AnimatedSection className="space-y-8" variant={fadeInUp}>
+              <div className="space-y-8">
+                {/* Contact Illustration */}
+                <motion.div
+                  className="relative h-80 mb-12"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                >
+                  <motion.div
+                    animate={{
+                      y: [0, -10, 0],
+                      rotate: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <div className="relative h-64">
+                      <Image
+                        src="/images/contact-illustration.png"
+                        alt="Contact Illustration"
+                        fill
+                        className="object-contain"
+                        priority
+                        quality={100}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                  </motion.div>
+                </motion.div>
+
+                {/* Contact Information Cards */}
+                <motion.div className="space-y-6" variants={staggerContainer} initial="hidden" animate="visible">
+                  {contactInfo.map((contact, index) => (
+                    <motion.a
+                      key={index}
+                      href={contact.href}
+                      variants={scaleIn}
+                      className="block p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 group"
+                      whileHover={{
+                        scale: 1.02,
+                        y: -5,
+                        boxShadow: "0 20px 40px rgba(236, 72, 153, 0.2)",
+                      }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <div className="flex items-start space-x-4">
+                        <motion.div
+                          className="p-3 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        >
+                          <contact.icon className="h-6 w-6 text-white" />
+                        </motion.div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-white text-lg mb-1">{contact.title}</h3>
+                          <p className="text-gray-300 mb-2">{contact.value}</p>
+                          <p className="text-sm text-gray-400">{contact.description}</p>
+                        </div>
+                        <motion.div
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                          whileHover={{ x: 5 }}
+                        >
+                          <Send className="h-5 w-5 text-pink-400" />
+                        </motion.div>
+                      </div>
+                    </motion.a>
+                  ))}
+                </motion.div>
+
+                {/* Quick Stats */}
+                <motion.div
+                  className="grid grid-cols-2 gap-4 mt-8"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {[
+                    { icon: MessageCircle, label: "Réponse rapide", value: "< 24h" },
+                    { icon: Star, label: "Satisfaction", value: "100%" },
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      variants={scaleIn}
+                      className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 text-center"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 10 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <stat.icon className="h-8 w-8 text-pink-400 mx-auto mb-2" />
+                      </motion.div>
+                      <p className="text-2xl font-bold text-white">{stat.value}</p>
+                      <p className="text-sm text-gray-400">{stat.label}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 space-y-6">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-gray-200 mb-2">Nom</label>
-                  <input type="text" className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-pink-500" />
+            </AnimatedSection>
+
+            {/* Right Column - Contact Form */}
+            <AnimatedSection className="space-y-8" variant={fadeInUp}>
+              <motion.div
+                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20"
+                whileHover={{ boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-white mb-4">Envoyez-moi un message</h2>
+                  <p className="text-gray-300">
+                    Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
+                  </p>
                 </div>
-                <div>
-                  <label className="block text-gray-200 mb-2">Email</label>
-                  <input type="email" className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-pink-500" />
-                </div>
-                <div>
-                  <label className="block text-gray-200 mb-2">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-pink-500"></textarea>
-                </div>
-                <button className="w-full px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1">
-                  Envoyer
-                </button>
-              </form>
-            </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <motion.div variants={fadeInUp}>
+                      <label className="block text-gray-200 mb-2 font-medium">Nom complet</label>
+                      <motion.input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                        placeholder="Votre nom"
+                        required
+                        whileFocus={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </motion.div>
+
+                    <motion.div variants={fadeInUp}>
+                      <label className="block text-gray-200 mb-2 font-medium">Email</label>
+                      <motion.input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                        placeholder="votre@email.com"
+                        required
+                        whileFocus={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      />
+                    </motion.div>
+                  </motion.div>
+
+                  <motion.div variants={fadeInUp}>
+                    <label className="block text-gray-200 mb-2 font-medium">Sujet</label>
+                    <motion.input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                      placeholder="Sujet de votre message"
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
+                  </motion.div>
+
+                  <motion.div variants={fadeInUp}>
+                    <label className="block text-gray-200 mb-2 font-medium">Message</label>
+                    <motion.textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={6}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 transition-all resize-none"
+                      placeholder="Décrivez votre projet ou votre question..."
+                      required
+                      whileFocus={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    />
+                  </motion.div>
+
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    variants={fadeInUp}
+                    whileHover={{
+                      scale: 1.02,
+                      boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <motion.div
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                        />
+                        <span>Envoi en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-5 w-5" />
+                        <span>Envoyer le message</span>
+                      </>
+                    )}
+                  </motion.button>
+                </form>
+
+                {/* Additional Info */}
+                <motion.div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/10" variants={fadeInUp}>
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <Globe className="h-5 w-5 text-pink-400" />
+                    <span className="text-sm">
+                      Je réponds généralement dans les 24 heures. Pour les urgences, appelez-moi directement.
+                    </span>
+                  </div>
+                  
+                </motion.div>
+              </motion.div>
+              <div className="relative h-96 w-full flex gap-4">
+                      <motion.div 
+                        className="relative w-1/2 h-full"
+                        variants={fadeInLeft}
+                        initial="hidden"
+                        animate="visible"
+                      >
+                        <Image
+                          src="/images/contact-illustration.png"
+                          alt="Contact Illustration"
+                          fill
+                          className="object-contain object-left"
+                          priority
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </motion.div>
+                      <motion.div 
+                        className="relative w-1/2 h-full"
+                        variants={fadeInRight}
+                        initial="hidden"
+                        animate="visible"
+                      >
+                        <Image
+                          src="/images/coding.png"
+                          alt="Coding Illustration"
+                          fill
+                          className="object-contain object-right"
+                          priority
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </motion.div>
+                    </div>
+            </AnimatedSection>
+            
           </div>
         </div>
+
+        {/* Call to Action Section */}
+        <AnimatedSection className="mt-20">
+          <motion.div
+            className="text-center bg-gradient-to-r from-pink-500/10 to-purple-600/10 backdrop-blur-sm p-12 rounded-3xl border border-white/20"
+            variants={fadeInUp}
+          >
+            <h3 className="text-3xl font-bold text-white mb-4">Prêt à démarrer votre projet ?</h3>
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              Que ce soit pour un site web, une application ou une consultation, je suis là pour vous aider à
+              concrétiser vos idées.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="tel:+212691844523"
+                className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-semibold inline-flex items-center justify-center space-x-2"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Phone className="h-5 w-5" />
+                <span>Appelez maintenant</span>
+              </motion.a>
+              <motion.a
+                href="mailto:mohamedyahyalazar@gmail.com"
+                className="px-8 py-4 border-2 border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 inline-flex items-center justify-center space-x-2"
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Mail className="h-5 w-5" />
+                <span>Envoyer un email</span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </AnimatedSection>
       </main>
     </div>
   )
