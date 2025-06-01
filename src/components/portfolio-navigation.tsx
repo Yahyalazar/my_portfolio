@@ -140,7 +140,7 @@ export default function PortfolioNavigation() {
               </motion.button>
 
               <motion.a
-                href="/cv-mohammed-yahya-lazar.pdf"
+                href="/cv_yahya.pdf"
                 download="CV-Mohammed-Yahya-Lazar.pdf"
                 className="px-8 py-4 border-2 border-white/20 rounded-xl font-semibold inline-flex items-center justify-center group text-white"
                 whileHover={{
