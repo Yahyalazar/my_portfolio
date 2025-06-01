@@ -2,7 +2,7 @@
 
 import { Navigation } from "@/components/navigation"
 import Image from "next/image"
-import { Camera, ExternalLink } from 'lucide-react'
+import { Camera, ExternalLink, User } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const fadeInUp = {
@@ -22,13 +22,21 @@ const staggerContainer = {
 export default function ProjectsPage() {
   const projects = [
     {
-      title: "Photography Portfolio",
-      description: "A photography portfolio website showcasing various categories including nature, children, travel, equipment, culture, and sports photography.",
+      title: "Photography website",
+      description: "A photography  website showcasing various categories including nature, children, travel, equipment, culture, and sports photography.",
       technologies: ["HTML", "CSS"],
-      image: "/images/image.png",
+      image: "/images/image1.png",
       link: "https://project-photography-ten.vercel.app/#header",
       icon: <Camera className="w-6 h-6 text-pink-400" />
-    }
+    },
+    {
+        title: "my_portfolio",
+        description: "A modern, responsive personal portfolio website built with Next.js and Tailwind CSS, featuring animated UI components, project showcases, skills visualization, and contact functionality. Designed with accessibility and performance in mind.",
+        technologies: ["Nextjs", "Taillwind"],
+        image: "/images/portfolio.png",
+        link: "https://portfolio-mohamed-yahya-lazar.vercel.app/",
+        icon: <User className="w-6 h-6 text-pink-400" />
+      },
     // Add other projects here
   ]
 
