@@ -2,7 +2,7 @@
 
 import { Navigation } from "@/components/navigation"
 import Image from "next/image"
-import { Camera, ExternalLink, User } from 'lucide-react'
+import { BriefcaseMedicalIcon, Camera, ExternalLink, ListCheckIcon, ShoppingBag, User } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const fadeInUp = {
@@ -43,7 +43,23 @@ export default function ProjectsPage() {
         technologies: ["HTML", "CSS","JS"],
         image: "/images/to_do.png",
         link: "https://to-do-list-one-psi-84.vercel.app/",
-        icon: <User className="w-6 h-6 text-pink-400" />
+        icon: <ListCheckIcon className="w-6 h-6 text-pink-400" />
+      },
+      {
+        title: "Shopper",
+        description: "Un site e-commerce dédié à la vente de vêtements à la mode pour femmes, hommes et enfants avec une collection variée de styles et de tailles.",
+        technologies: ["HTML", "CSS","JS"],
+        image: "/images/shopper.png",
+        link: "https://github.com/NadiaMourtaki/https---github.com-NadiaMourtaki-Ecom_app.git",
+        icon: <ShoppingBag className="w-6 h-6 text-pink-400" />
+      },
+      {
+        title: "ZeeCare Medical Institute",
+        description: "Un site web d'établissement médical de pointe présentant des services de santé complets, une équipe médicale professionnelle et des soins centrés sur le patient. Les fonctionnalités comprennent la prise de rendez-vous, des informations sur les services et des ressources de santé.",
+        technologies: ["Reactjs","NodeJs", "ExpressJs","Taillwindcss","MongoDB"],
+        image: "/images/hospital.png",
+        link: "https://github.com/Yahyalazar/ZeeCare-Medical-Institute.git",
+        icon: <BriefcaseMedicalIcon className="w-6 h-6 text-pink-400" />
       },
     // Add other projects here
   ]
