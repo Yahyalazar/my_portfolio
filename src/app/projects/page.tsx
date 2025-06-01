@@ -23,7 +23,7 @@ export default function ProjectsPage() {
   const projects = [
     {
       title: "Photography website",
-      description: "A photography  website showcasing various categories including nature, children, travel, equipment, culture, and sports photography.",
+      description: "Un site web de photographie présentant diverses catégories, notamment la nature, les enfants, les voyages, l'équipement, la culture et la photographie sportive.",
       technologies: ["HTML", "CSS"],
       image: "/images/image1.png",
       link: "https://project-photography-ten.vercel.app/#header",
@@ -35,6 +35,14 @@ export default function ProjectsPage() {
         technologies: ["Nextjs", "Taillwind"],
         image: "/images/portfolio.png",
         link: "https://portfolio-mohamed-yahya-lazar.vercel.app/",
+        icon: <User className="w-6 h-6 text-pink-400" />
+      },
+      {
+        title: "to_do_list",
+        description: "Une application de liste de tâches simple et intuitive qui vous aide à organiser et à suivre vos activités quotidiennes.",
+        technologies: ["HTML", "CSS","JS"],
+        image: "/images/to_do.png",
+        link: "https://to-do-list-one-psi-84.vercel.app/",
         icon: <User className="w-6 h-6 text-pink-400" />
       },
     // Add other projects here
