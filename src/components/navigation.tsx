@@ -173,19 +173,11 @@ export function Navigation() {
                         transition={{ duration: 0.2 }}
                       >
                         <a
-                          href="/cv-mohammed-yahya-lazar.pdf"
+                          href="/cv_yahya.pdf"
                           download="CV-Mohammed-Yahya-Lazar.pdf"
-                          className="flex items-center p-2 rounded-md w-full"
+                          onClick={() => setIsOpen(false)}
                         >
-                          <motion.div
-                            whileHover={{
-                              scale: 1.2,
-                              y: -2,
-                            }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                          >
-                            <Download className="mr-3 h-4 w-4 text-pink-400" />
-                          </motion.div>
+                          <Download className="mr-3 h-4 w-4 text-pink-400" />
                           <div>
                             <p className="font-medium text-white">Télécharger CV</p>
                             <p className="text-xs text-gray-400">Format PDF</p>
