@@ -187,7 +187,23 @@ export default function PortfolioNavigation() {
           </motion.div>
 
           {/* Right Image */}
-          <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] mt-8 lg:mt-0 animate-slide-in-right lg:pr-4">
+          <motion.div 
+            className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] mt-8 lg:mt-0 lg:pr-4"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0,
+              y: [0, -15, 0],
+            }}
+            transition={{
+              duration: 2,
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
+          >
             <Image
               src="/images/coding.png"
               alt="Developer Illustration"
@@ -197,7 +213,7 @@ export default function PortfolioNavigation() {
               quality={100}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
+          </motion.div>
         </section>
 
         {/* Experience Section */}
