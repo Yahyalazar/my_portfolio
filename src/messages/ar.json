@@ -1,0 +1,166 @@
+{
+  "navigation": {
+    "name":"محمد يحيى لزعر",
+    "title":"لنناقش مشروعك",
+    "job":"مهندس تطوير ويب",
+    "home": "الرئيسية",
+    "about": "عنّي",
+    "projects": "المشاريع",
+    "skills": "المهارات",
+    "contact": "اتصل بي",
+    "contactButton":"اتصل بي & CV",
+    "meContact":"اتصل بي",
+    "downloadCV":"تحميل السيرة الذاتية"
+  },
+  "LocaleSwitcher": {
+    "label": "اختر اللغة",
+    "locale": "{locale, select, en {الإنجليزية} fr {الفرنسية} ar {العربية} other {غير معروف} }"
+  },
+  "home": {
+    "active": "متاح لمشاريع جديدة",
+    "title": "محمد يحيى لزعر",
+    "experienceTitle": "الخبرة المهنية",
+    "experienceSubtitle": "مسيرتي حتى الآن في تطوير الويب",
+    "experienceJobs": {
+     "job1": {
+        "title": "SkillsnSmart - مطور الواجهة الأمامية",
+        "date": "أكتوبر 2024 - أبريل 2025",
+        "description": "قمت بتطوير الواجهة الأمامية لمنصة إدارة الرياضة الخاصة بالاتحاد الملكي المغربي لكرة القدم.",
+        "tech": ["Next.js", "Spring Boot", "MySQL", "Java"]
+      },
+      "job2": {
+        "title": "IRMH - مطور ويب متخصص",
+        "date": "أبريل 2024",
+        "description": "قمت بتطوير وصيانة مواقع التجارة الإلكترونية لبيع القفطانات العصرية.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+    "skillsTitle": "المهارات التقنية",
+    "skillsSubtitle": "التقنيات التي أستخدمها",
+    "skillsCategories": {
+      "frontend": "الواجهة الأمامية",
+      "backend": "الواجهة الخلفية",
+      "tools": "الأدوات"
+    },
+    "contactTitle": "ابق على تواصل",
+    "contactSubtitle": "لا تتردد في التواصل معي لمناقشة مشاريعك.",
+    "contactInfo": {
+      "phone": {
+        "label": "الهاتف",
+        "value": "+212 691 844 523"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "value": "mohamedyahyalazar@gmail.com"
+      },
+      "github": {
+        "label": "GitHub",
+        "value": "github.com/Yahyalazar"
+      },
+      "location": {
+        "label": "الموقع",
+        "value": "سطات - الدار البيضاء، المغرب"
+      }
+    },
+    "subtitle": "مطور ويب متخصص في الواجهة الأمامية والخلفية",
+    "description": "أنا متحمس للتكنولوجيا الحديثة، وأقوم بتطوير تطبيقات ويب عالية الأداء باستخدام Next.js وReactJS وLaravel وMySQL.",
+    "projectsButton": "اكتشف مشاريعي",
+    "downloadCV": "تحميل السيرة الذاتية",
+    "skillsSection": "المهارات التقنية",
+    "contactSection": "ابق على تواصل"
+  },
+"about": {
+    "title": "عنّي",
+    "experienceTitle": "الخبرة المهنية",
+    "educationTitle": "التعليم",
+    "languagesTitle": "اللغات",
+    "personalityTitle": "الشخصية",
+    "experience": {
+      "job1": {
+        "company": "SkillsnSmart",
+        "position": "مطور الواجهة الأمامية",
+        "date": "أكتوبر 2024 - أبريل 2025",
+        "description": "قمت بتطوير الواجهة الأمامية لمنصة إدارة الرياضة الخاصة بالاتحاد الملكي المغربي لكرة القدم.",
+        "tech": ["Next.js", "Spring Boot (Java)", "MySQL", "Python"]
+      },
+      "job2": {
+        "company": "IRMH",
+        "position": "مطور ويب متكامل",
+        "date": "أبريل 2024",
+        "description": "قمت بتطوير وصيانة مواقع التجارة الإلكترونية لبيع القفطانات العصرية.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+    "education": {
+      "edu1": {
+        "degree": "دبلوم في التطوير الرقمي - تخصص تطوير متكامل",
+        "institution": "معهد الوالي سطات",
+        "date": "2024 - 2022",
+        "description": "تدريب متخصص في التطوير المتكامل / الواجهة الخلفية والأمامية لجافا سكريبت، تصميم واجهة المستخدم، الحوسبة السحابية."      },
+      "edu2": {
+        "degree": "شهادة البكالوريا - العلوم التجريبية",
+        "institution": "معهد العلا سطات",
+        "date": "2022 - 2021",
+        "description": "مسار العلوم الدولي"
+      }
+    },
+    "languages": {
+      "arabic": "العربية",
+      "french": "الفرنسية",
+      "english": "الإنجليزية",
+      "proficiency": "طلاقة (قراءة، كتابة، تحدث)"
+    },
+    "personalityTraits": ["قابل للتكيف", "منظم", "مرن", "متعاون"]
+  },
+  "projects": {
+    "title": "مشاريعي"
+  },
+  "skills": {
+    "title": "مهاراتي"
+  },
+  "contact": {
+    "title": "اتصل بي",
+    "form": {
+      "name": "اسمك",
+      "email": "بريدك الإلكتروني",
+      "subject": "الموضوع",
+      "message": "رسالتك",
+      "sendButton": "إرسال الرسالة"
+    },
+    "info": {
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "location": "الموقع",
+      "availability": "التوفر"
+    },
+    "quickResponse": "استجابة سريعة",
+    "satisfaction": "الرضا",
+    "messageSentSuccess": "تم إرسال الرسالة بنجاح! سأعود إليك في أقرب وقت ممكن.",
+    "messageSentError": "حدث خطأ. الرجاء المحاولة مرة أخرى لاحقًا.",
+    "sendMessageTitle": "أرسل لي رسالة",
+    "sendMessageDescription": "املأ النموذج أدناه وسأعود إليك في أقرب وقت ممكن.",
+    "callToActionTitle": "هل أنت مستعد لبدء مشروعك؟",
+    "callToActionDescription": "سواء كان ذلك لموقع ويب أو تطبيق أو استشارة، أنا هنا لمساعدتك في تحقيق أفكارك.",
+    "callNowButton": "اتصل الآن",
+    "emailMeButton": "أرسل لي بريدًا إلكترونيًا",
+    "availableForProjects": "متاح لمشاريع جديدة",
+    "emailDescription": "أرسل لي بريدًا إلكترونيًا",
+    "phoneDescription": "اتصل بي مباشرة",
+    "locationDescription": "موقعي",
+    "availabilityDescription": "ساعات العمل",
+    "responseTimeInfo": "أرد عادةً في غضون 24 ساعة. للأمور العاجلة، يرجى الاتصال بي مباشرة."
+  },
+  "footer": {
+    "tagline": "تحويل الأفكار إلى تجارب رقمية أنيقة باستخدام التكنولوجيا الحديثة للويب",
+    "socialLinks": {
+      "contact": "اتصل بنا",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "copyright": {
+      "name": "محمد يحيى لزعر",
+      "year": "2025",
+      "attribution": "تم إنشاؤه مع ❤️"
+    }
+  }
+}

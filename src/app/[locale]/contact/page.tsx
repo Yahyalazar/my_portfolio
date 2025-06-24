@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+
 import { Navigation } from "@/components/navigation"
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, Star } from "lucide-react"
 import { motion } from "framer-motion"

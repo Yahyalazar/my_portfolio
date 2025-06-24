@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -12,22 +11,27 @@ import {
   SheetTrigger,
   SheetContent,
 } from "@/components/ui/sheet"
-
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import LocaleSwitcher from "./LocaleSwitcher"
+import { useTranslations } from "next-intl"
+
+// Import translations
+
 
 const navigationItems = [
-  { name: "Accueil", href: "/" },
-  { name: "À Propos", href: "/about" },
-  { name: "Projets", href: "/projects" },
-  { name: "Compétences", href: "/skills" },
-  { name: "Contact", href: "/contact" },
-]
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "projects", href: "/projects" },
+  { key: "skills", href: "/skills" },
+  { key: "contact", href: "/contact" },
+];
 
 export function Navigation() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = React.useState(false)
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+  const t = useTranslations('navigation');
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
   return (
     <motion.header
@@ -57,17 +61,16 @@ export function Navigation() {
               whileHover={{ color: "#ec4899" }}
               transition={{ duration: 0.2 }}
             >
-              Mohamed Yahya
+              {t('name')}
             </motion.span>
-            <p className="text-sm text-gray-400">Full Stack Developer</p>
+            <p className="text-sm text-gray-400">{t('job')}</p>
           </div>
         </Link>
-
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           {navigationItems.map((item, index) => (
             <motion.div
-              key={item.name}
+              key={item.key}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -78,9 +81,8 @@ export function Navigation() {
                   }`}
               >
                 <motion.span whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-                  {item.name}
+                  {t(item.key)} {/* Dynamic translation */}
                 </motion.span>
-
                 {/* Hover effect */}
                 <motion.div
                   className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full"
@@ -88,7 +90,6 @@ export function Navigation() {
                   whileHover={{ width: "100%" }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
-
                 {/* Active indicator */}
                 {pathname === item.href && (
                   <motion.span
@@ -100,8 +101,8 @@ export function Navigation() {
               </Link>
             </motion.div>
           ))}
+          <LocaleSwitcher />
         </nav>
-
         {/* CTA Button */}
         <div className="hidden md:flex items-center space-x-3">
           <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
@@ -119,7 +120,7 @@ export function Navigation() {
                         : "linear-gradient(135deg, #ec4899, #8b5cf6)",
                     }}
                   >
-                    Contact & CV
+                    {t('contactButton')}
                   </motion.span>
                   <motion.div animate={{ rotate: isDropdownOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                     <ChevronDown className="ml-2 h-4 w-4" />
@@ -127,7 +128,6 @@ export function Navigation() {
                 </Button>
               </motion.div>
             </DropdownMenuTrigger>
-
             <AnimatePresence>
               {isDropdownOpen && (
                 <DropdownMenuContent
@@ -157,13 +157,12 @@ export function Navigation() {
                             <Mail className="mr-3 h-4 w-4 text-pink-400" />
                           </motion.div>
                           <div>
-                            <p className="font-medium text-white">Me Contacter</p>
-                            <p className="text-xs text-gray-400">Discutons de votre projet</p>
+                            <p className="font-medium text-white">{t('meContact')}</p>
+                            <p className="text-xs text-gray-400">{t('title')}</p>
                           </div>
                         </Link>
                       </motion.div>
                     </DropdownMenuItem>
-
                     <DropdownMenuItem asChild className="cursor-pointer">
                       <motion.div
                         whileHover={{
@@ -191,7 +190,6 @@ export function Navigation() {
             </AnimatePresence>
           </DropdownMenu>
         </div>
-
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
@@ -203,7 +201,6 @@ export function Navigation() {
             <SheetHeader>
               <SheetTitle className="text-white">Navigation</SheetTitle>
             </SheetHeader>
-
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -226,13 +223,12 @@ export function Navigation() {
                     >
                       <span className="text-white font-bold text-2xl">MYL</span>
                     </motion.div>
-                    <h3 className="font-semibold text-xl text-white">Mohamed Yahya Lazar</h3>
+                    <h3 className="font-semibold text-xl text-white">{t('name')}</h3>
                     <p className="text-sm text-gray-400">Développeur Full Stack</p>
                   </motion.div>
-
                   {navigationItems.map((item, index) => (
                     <motion.div
-                      key={item.name}
+                      key={item.key}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + index * 0.05 }}
@@ -247,12 +243,11 @@ export function Navigation() {
                           whileHover={{ scale: 1.05, x: 10 }}
                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
-                          {item.name}
+                          {t(item.key)}
                         </motion.span>
                       </Link>
                     </motion.div>
                   ))}
-
                   <motion.div
                     className="pt-6 space-y-4 border-t border-white/10"
                     initial={{ opacity: 0, y: 20 }}
@@ -266,11 +261,10 @@ export function Navigation() {
                       >
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                           <Mail className="mr-2 h-5 w-5" />
-                          Me Contacter
+                          {t('meContact')}
                         </Link>
                       </Button>
                     </motion.div>
-
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                       <Button asChild variant="outline" className="w-full border-white/10 text-white hover:bg-white/5">
                         <a
@@ -279,7 +273,7 @@ export function Navigation() {
                           onClick={() => setIsOpen(false)}
                         >
                           <Download className="mr-2 h-5 w-5" />
-                          Télécharger CV
+                          {t('downloadCV')}
                         </a>
                       </Button>
                     </motion.div>

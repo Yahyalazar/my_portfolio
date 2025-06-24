@@ -1,0 +1,166 @@
+{
+  "navigation": {
+    "name":"Mohamed Yahya Lazar",
+    "title": "Let's Discuss Your Project",
+    "job":"Full Stack Developer",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "contactButton":"Contact & CV",
+    "meContact":"Contact Me",
+    "downloadCV":"Download CV"
+  },
+  "LocaleSwitcher": {
+    "label": "Choose Language",
+    "locale": "{locale, select, en {english} fr {french} ar {arabic} other {unknown} }"
+  },
+  "home": {
+    "active": "Available for new projects",
+    "title": "Mohamed Yahya Lazar",
+    "experienceTitle": "Professional Experience",
+    "experienceSubtitle": "My journey in web development so far",
+    "experienceJobs": {
+     "job1": {
+        "title": "SkillsnSmart - Frontend Developer",
+        "date": "Oct. 2024 - Apr. 2025",
+        "description": "Developed the frontend of the Sport Management platform for FRMF.",
+        "tech": ["Next.js", "Spring Boot", "MySQL", "Java"]
+      },
+      "job2":{
+        "title": "IRMH - Full Stack Developer",
+        "date": "April 2024",
+        "description": "Developed and maintained e-commerce websites for selling modern caftans.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+    "skillsTitle": "Technical Skills",
+    "skillsSubtitle": "Technologies I use",
+    "skillsCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools"
+    },
+    "contactTitle": "Stay in Touch",
+    "contactSubtitle": "Feel free to reach out to discuss your projects.",
+    "contactInfo": {
+      "phone": {
+        "label": "Phone",
+        "value": "+212 691 844 523"
+      },
+      "email": {
+        "label": "Email",
+        "value": "mohamedyahyalazar@gmail.com"
+      },
+      "github": {
+        "label": "GitHub",
+        "value": "github.com/Yahyalazar"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Settat - Casablanca, Morocco"
+      }
+    },
+    "subtitle": "Full Stack Web Developer",
+    "description": "Passionate about modern technologies, I develop high-performance web applications using Next.js, ReactJS, Laravel, and MySQL.",
+    "projectsButton": "Discover My Projects",
+    "downloadCV": "Download CV",
+    "skillsSection": "Technical Skills",
+    "contactSection": "Stay in Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "experienceTitle": "Professional Experience",
+    "educationTitle": "Education",
+    "languagesTitle": "Languages",
+    "personalityTitle": "Personality",
+    "experience": {
+      "job1": {
+        "company": "SkillsnSmart",
+        "position": "Frontend Developer",
+        "date": "Oct. 2024 - Apr. 2025",
+        "description": "Developed the frontend of the Sport Management platform for FRMF.",
+        "tech": ["Next.js", "Spring Boot (Java)", "MySQL", "Python"]
+      },
+      "job2": {
+        "company": "IRMH",
+        "position": "Full Stack Developer",
+        "date": "April 2024",
+        "description": "Developed and maintained e-commerce websites for selling modern caftans.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+    "education": {
+      "edu1": {
+        "degree": "Diploma in Digital Development - Full Stack Option",
+        "institution": "Institut Al ouali Sattat",
+        "date": "2024 - 2022",
+        "description": "Specialized training in full stack development / back-end and front-end JavaScript, UI/UX design, cloud computing."      },
+      "edu2": {
+        "degree": "High School Diploma - Experimental Sciences",
+        "institution": "Institut Al ouali Sattat",
+        "date": "2022 - 2021",
+        "description": "International Science Stream"
+      }
+    },
+    "languages": {
+      "arabic": "Arabic",
+      "french": "French",
+      "english": "English",
+      "proficiency": "Fluent (read, write, speak)"
+    },
+    "personalityTraits": ["Adaptable", "Organized", "Flexible", "Collaborative"]
+  },
+  "projects": {
+    "title": "My Projects"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "sendButton": "Send Message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "availability": "Availability"
+    },
+    "quickResponse": "Quick Response",
+    "satisfaction": "Satisfaction",
+    "messageSentSuccess": "Message sent successfully! I will get back to you as soon as possible.",
+    "messageSentError": "An error occurred. Please try again later.",
+    "sendMessageTitle": "Send me a message",
+    "sendMessageDescription": "Fill out the form below and I will get back to you as soon as possible.",
+    "callToActionTitle": "Ready to start your project?",
+    "callToActionDescription": "Whether for a website, an application, or a consultation, I am here to help you bring your ideas to life.",
+    "callNowButton": "Call Now",
+    "emailMeButton": "Email Me",
+    "availableForProjects": "Available for new projects",
+    "emailDescription": "Send me an email",
+    "phoneDescription": "Call me directly",
+    "locationDescription": "My location",
+    "availabilityDescription": "Working hours",
+    "responseTimeInfo": "I usually respond within 24 hours. For urgent matters, please call me directly."
+  },
+  "footer": {
+    "tagline": "Transforming ideas into elegant digital experiences with modern web technologies",
+    "socialLinks": {
+      "contact": "Contact",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "copyright": {
+      "name": "Mohamed Yahya Lazar",
+      "year": "2025",
+      "attribution": "Built with ❤️"
+    }
+  }
+}

@@ -1,11 +1,11 @@
 "use client"
-
 import { Navigation } from "./navigation"
 import { Download, Github, Linkedin, Mail, Phone, MapPin, Calendar, Code, Database, Wrench } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import { useTranslations } from "next-intl"
 
 // Animation variants
 const fadeInUp = {
@@ -16,7 +16,6 @@ const fadeInUp = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 }
-
 const fadeInLeft = {
   hidden: { opacity: 0, x: -60 },
   visible: {
@@ -25,7 +24,6 @@ const fadeInLeft = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 }
-
 const fadeInRight = {
   hidden: { opacity: 0, x: 60 },
   visible: {
@@ -34,7 +32,6 @@ const fadeInRight = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 }
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -45,7 +42,6 @@ const staggerContainer = {
     },
   },
 }
-
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -66,7 +62,6 @@ function AnimatedSection({
 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
     <motion.div
       ref={ref}
@@ -81,10 +76,11 @@ function AnimatedSection({
 }
 
 export default function PortfolioNavigation() {
+  const t = useTranslations('home'); // Use translations for the 'home' namespace
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 relative overflow-hidden">
       <Navigation />
-
       {/* Hero Section */}
       <main className="container mx-auto px-6 md:px-8 lg:px-12 py-20 relative">
         <section className="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-7xl mx-auto">
@@ -104,28 +100,23 @@ export default function PortfolioNavigation() {
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               />
-              Disponible pour de nouveaux projets
+              {t("active")}
             </motion.div>
-
             <motion.h1
               variants={fadeInUp}
               className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
             >
-              Mohamed Yahya Lazar
+              {t('title')}
             </motion.h1>
-
             <motion.p variants={fadeInUp} className="text-2xl md:text-3xl font-semibold text-purple-200">
-              Développeur Full Stack Web
+              {t('subtitle')}
             </motion.p>
-
             <motion.p variants={fadeInUp} className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-              Passionné par les technologies modernes, je développe des applications web performantes et intuitives.
-              Spécialisé en <span className="text-pink-300 font-semibold">Next.js</span>,
-              <span className="text-pink-300 font-semibold"> ReactJS</span>,
-              <span className="text-pink-300 font-semibold"> Laravel</span> et
-              <span className="text-pink-300 font-semibold"> MySQL</span>.
+              {t("description")} <span className="text-pink-300 font-semibold">Next.js</span>,
+              <span className="text-pink-300 font-semibold">ReactJS</span>,
+              <span className="text-pink-300 font-semibold">Laravel</span> et
+              <span className="text-pink-300 font-semibold">MySQL</span>.
             </motion.p>
-
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
               <motion.button
                 className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl font-semibold shadow-lg"
@@ -136,9 +127,8 @@ export default function PortfolioNavigation() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <a href="/projects">Découvrir Mes Projets</a>
+                <a href="/projects">{t('projectsButton')}</a>
               </motion.button>
-
               <motion.a
                 href="/cv_yahya.pdf"
                 download="CV-Mohammed-Yahya-Lazar.pdf"
@@ -156,15 +146,14 @@ export default function PortfolioNavigation() {
                 >
                   <Download className="mr-2 h-5 w-5" />
                 </motion.div>
-                Télécharger CV
+                {t('downloadCV')}
               </motion.a>
             </motion.div>
-
             {/* Social Links */}
             <motion.div variants={fadeInUp} className="flex space-x-6 pt-4">
               {[
-                { icon: Github, href: "https://github.com/Yahyalazar" },
-                { icon: Linkedin, href: "https://linkedin.com/in/med-yahya-lazar" },
+                { icon: Github, href: "https://github.com/Yahyalazar"  },
+                { icon: Linkedin, href: "https://linkedin.com/in/med-yahya-lazar"  },
                 { icon: Mail, href: "mailto:mohamedyahyalazar@gmail.com" },
                 { icon: Phone, href: "tel:+212691844523" },
               ].map((social, index) => (
@@ -185,7 +174,6 @@ export default function PortfolioNavigation() {
               ))}
             </motion.div>
           </motion.div>
-
           {/* Right Image */}
           <motion.div 
             className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] mt-8 lg:mt-0 lg:pr-4"
@@ -215,14 +203,12 @@ export default function PortfolioNavigation() {
             />
           </motion.div>
         </section>
-
         {/* Experience Section */}
         <AnimatedSection className="mt-32 space-y-16">
           <motion.div className="text-center" variants={fadeInUp}>
-            <h2 className="text-4xl font-bold mb-4 text-white">Expérience Professionnelle</h2>
-            <p className="text-gray-300 text-lg">Mon parcours dans le développement web</p>
+            <h2 className="text-4xl font-bold mb-4 text-white">{t('experienceTitle')}</h2>
+            <p className="text-gray-300 text-lg">{t('experienceSubtitle')}</p>
           </motion.div>
-
           <motion.div
             className="grid lg:grid-cols-2 gap-8"
             variants={staggerContainer}
@@ -232,17 +218,17 @@ export default function PortfolioNavigation() {
           >
             {[
               {
-                title: "SkillsnSmart - Développeur Frontend",
-                date: "Oct. 2024 - Avr. 2025",
-                description: "Développement de la plateforme Sport Management pour la FRMF.",
+                title: t('experienceJobs.job1.title'),
+                date: t('experienceJobs.job1.date'),
+                description: t('experienceJobs.job1.description'),
                 tech: ["Next.js", "Spring Boot", "MySQL", "Java"],
                 icon: Code,
                 iconBg: "pink",
               },
               {
-                title: "IRMH - Développeur Full Stack",
-                date: "Avril 2024",
-                description: "Développement d'un site e-commerce pour la vente de caftans modernes.",
+                title: t('experienceJobs.job2.title'),
+                date: t('experienceJobs.job2.date'),
+                description: t('experienceJobs.job2.description'),
                 tech: ["Laravel", "PHP", "MySQL", "CRUD"],
                 icon: Database,
                 iconBg: "purple",
@@ -294,14 +280,12 @@ export default function PortfolioNavigation() {
             ))}
           </motion.div>
         </AnimatedSection>
-
         {/* Skills Section */}
         <AnimatedSection className="mt-32 space-y-16">
           <motion.div className="text-center" variants={fadeInUp}>
-            <h2 className="text-4xl font-bold mb-4 text-white">Compétences Techniques</h2>
-            <p className="text-gray-300 text-lg">Technologies que je maîtrise</p>
+            <h2 className="text-4xl font-bold mb-4 text-white">{t('skillsTitle')}</h2>
+            <p className="text-gray-300 text-lg">{t('skillsSubtitle')}</p>
           </motion.div>
-
           <motion.div
             className="grid md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -311,7 +295,7 @@ export default function PortfolioNavigation() {
           >
             {[
               {
-                title: "Frontend",
+                title: t('skillsCategories.frontend'),
                 icon: Code,
                 color: "blue",
                 skills: [
@@ -326,13 +310,13 @@ export default function PortfolioNavigation() {
                 ],
               },
               {
-                title: "Backend",
+                title: t('skillsCategories.backend'),
                 icon: Database,
                 color: "green",
                 skills: ["PHP", "Laravel", "Node.js", "MySQL", "MongoDB", "SQL", "API REST", "Spring Boot"],
               },
               {
-                title: "Outils",
+                title: t('skillsCategories.tools'),
                 icon: Wrench,
                 color: "purple",
                 skills: ["Git", "Docker", "AWS", "Figma", "VS Code", "IntelliJ", "Postman", "Swagger"],
@@ -379,7 +363,6 @@ export default function PortfolioNavigation() {
             ))}
           </motion.div>
         </AnimatedSection>
-
         {/* Contact Section */}
         <AnimatedSection className="mt-32">
           <motion.div
@@ -387,10 +370,9 @@ export default function PortfolioNavigation() {
             variants={fadeInUp}
           >
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4 text-white">Restons en Contact</h2>
-              <p className="text-gray-300 text-lg">N'hésitez pas à me contacter pour discuter de vos projets</p>
+              <h2 className="text-3xl font-bold mb-4 text-white">{t('contactTitle')}</h2>
+              <p className="text-gray-300 text-lg">{t('contactSubtitle')}</p>
             </div>
-
             <motion.div
               className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
               variants={staggerContainer}
@@ -401,26 +383,26 @@ export default function PortfolioNavigation() {
               {[
                 {
                   icon: Phone,
-                  title: "Téléphone",
-                  value: "+212 06 91 84 45 23",
+                  title: t('contactInfo.phone.label'),
+                  value: t('contactInfo.phone.value'),
                   href: "tel:+212691844523",
                 },
                 {
                   icon: Mail,
-                  title: "Email",
-                  value: "mohamedyahyalazar@gmail.com",
+                  title: t('contactInfo.email.label'),
+                  value: t('contactInfo.email.value'),
                   href: "mailto:mohamedyahyalazar@gmail.com",
                 },
                 {
                   icon: Github,
-                  title: "GitHub",
-                  value: "github.com/Yahyalazar",
-                  href: "https://github.com/Yahyalazar",
+                  title: t('contactInfo.github.label'),
+                  value: t('contactInfo.github.value'),
+                  href: "https://github.com/Yahyalazar", 
                 },
                 {
                   icon: MapPin,
-                  title: "Localisation",
-                  value: "Settat - Casablanca, Maroc",
+                  title: t('contactInfo.location.label'),
+                  value: t('contactInfo.location.value'),
                   href: "#",
                 },
               ].map((contact, index) => (
@@ -450,9 +432,7 @@ export default function PortfolioNavigation() {
             </motion.div>
           </motion.div>
         </AnimatedSection>
-
         {/* Footer */}
-        
       </main>
     </div>
   )

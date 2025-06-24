@@ -1,7 +1,7 @@
 "use client"
-
 import { Github, Linkedin, Mail, Heart } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl';
 
 const AnimatedSection = ({ children, className }: { children: React.ReactNode; className?: string }) => (
   <motion.div
@@ -16,6 +16,8 @@ const AnimatedSection = ({ children, className }: { children: React.ReactNode; c
 )
 
 export function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 relative overflow-hidden">
       <AnimatedSection className="py-10">
@@ -35,26 +37,20 @@ export function Footer() {
               <span className="text-white font-bold text-lg">MYL</span>
             </motion.div>
             <p className="text-gray-300 text-sm text-center max-w-md">
-              Transformer des idées en expériences numériques élégantes avec des technologies web modernes
+              {t('tagline')} {/* Dynamic translation for the tagline */}
             </p>
           </div>
-          
           {/* Links and copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 border-t border-white/20 pt-6">
             <div className="text-gray-300 text-sm flex items-center">
-              © {new Date().getFullYear()} Mohamed Yahya Lazar. Fait avec
-              <motion.div 
-                whileHover={{ scale: 1.2 }}
-                className="mx-1"
-              >
-                <Heart className="w-4 h-4 text-pink-500 inline" />
-              </motion.div>
+              © {new Date().getFullYear()} {t('copyright.name')} {/* Dynamic translation for the name */}
+              . {t('copyright.attribution')} {/* Dynamic translation for the attribution */}
             </div>
             <div className="flex space-x-6">
               {[
-                { label: "GitHub", href: "https://github.com/Yahyalazar", icon: <Github className="w-5 h-5" /> },
-                { label: "LinkedIn", href: "https://linkedin.com/in/med-yahya-lazar", icon: <Linkedin className="w-5 h-5" /> },
-                { label: "Contact", href: "mailto:mohamedyahyalazar@gmail.com", icon: <Mail className="w-5 h-5" /> },
+                { label: t('socialLinks.contact'), href: "mailto:mohamedyahyalazar@gmail.com", icon: <Mail className="w-5 h-5" /> },
+                { label: t('socialLinks.linkedin'), href: "https://linkedin.com/in/med-yahya-lazar",  icon: <Linkedin className="w-5 h-5" /> },
+                { label: t('socialLinks.github'), href: "https://github.com/Yahyalazar",  icon: <Github className="w-5 h-5" /> },
               ].map((link, index) => (
                 <motion.a
                   key={index}

@@ -1,0 +1,166 @@
+{
+  "navigation": {
+    "name":"Mohamed Yahya Lazar",
+    "title": "Discutons de votre projet",
+    "job":"Développeur Full Stack",
+    "home": "Accueil",
+    "about": "À Propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "contactButton":"Contact & CV",
+    "meContact":"Me Contacter",
+    "downloadCV":"Télécharger CV"
+  },
+    "LocaleSwitcher":{
+    "label":"Choisir une langue",
+    "locale":"{locale, select, en {anglais} fr {français} ar {arabe} other {unknown} }"
+    },
+    "home": {
+      "active":"Disponible pour de nouveaux projets",
+      "title": "Mohamed Yahya Lazar",
+      "experienceTitle":"Expérience Professionnelle",
+      "experienceSubtitle":"Mon parcours dans le développement web jusqu'à présent",
+      "experienceJobs": {
+      "job1":{
+        "title":"SkillsnSmart - Développeur Frontend",
+        "date":"Oct. 2024 - Avr. 2025",
+        "description": "Développé la partie frontend de la plateforme Sport Management pour la FRMF.",
+        "tech": ["Next.js", "Spring Boot", "MySQL", "Java"]
+      },
+      "job2":{
+        "title": "IRMH - Développeur Full Stack",
+        "date": "Avril 2024",
+        "description": "Développé et maintenu des sites e-commerce pour la vente de caftans modernes.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+      "skillsTitle":"Compétences Techniques",
+      "skillsSubtitle":"Technologies que j'utilise",
+      "skillsCategories":{
+        "frontend":"Frontend",
+        "backend":"Backend",
+        "tools": "Outils"
+      },
+      "contactTitle":"Restez en Contact",
+      "contactSubtitle":"N'hésitez pas à me contacter pour discuter de vos projets.",
+      "contactInfo":{
+        "phone":{
+          "label": "Téléphone",
+          "value": "+212 691 844 523"
+        },
+        "email": {
+          "label": "Email",
+          "value": "mohamedyahyalazar@gmail.com"},
+          "github": {
+        "label":"GitHub",
+        "value": "github.com/Yahyalazar"
+      },
+      "location": {
+        "label":"Localisation",
+        "value": "Settat - Casablanca, Morocco"
+      }
+        },
+      "subtitle": "Développeur Full Stack Web",
+      "description": "Passionné par les technologies modernes, je développe des applications web performantes avec Next.js, ReactJS, Laravel et MySQL.",
+      "projectsButton": "Découvrir Mes Projets",
+      "downloadCV": "Télécharger CV",
+      "skillsSection": "Compétences Techniques",
+      "contactSection": "Restez en Contact"
+    },
+    "about": {
+    "title": "À Propos de Moi",
+    "experienceTitle": "Expérience Professionnelle",
+    "educationTitle": "Formation",
+    "languagesTitle": "Langues",
+    "personalityTitle": "Personnalité",
+    "experience": {
+      "job1": {
+        "company": "SkillsnSmart",
+        "position": "Développeur Frontend",
+        "date": "Oct. 2024 - Avr. 2025",
+        "description": "Développement de la partie frontend de la plateforme Sport Management pour la FRMF.",
+        "tech": ["Next.js", "Spring Boot (Java)", "MySQL", "Python"]
+      },
+      "job2": {
+        "company": "IRMH",
+        "position": "Développeur Full Stack",
+        "date": "Avril 2024",
+        "description": "Développement et maintenance de sites e-commerce pour la vente de caftans modernes.",
+        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      }
+    },
+    "education": {
+      "edu1": {
+        "degree": "Diplôme en Développement Digital - Option Full Stack",
+        "institution": "Office de formation professionnelle et de la promotion du travail",
+        "date": "2024 - 2022",
+        "description": "Formation spécialisée en développement full stack / back-end et front-end JavaScript, design UI/UX, cloud computing."
+      },
+      "edu2": {
+        "degree": "Baccalauréat - Sciences Expérimentales",
+        "institution": "Institut Al oula Settat",
+        "date": "2022 - 2021",
+        "description": "Filière Sciences Internationale"
+      }
+    },
+    "languages": {
+      "arabic": "Arabe",
+      "french": "Français",
+      "english": "Anglais",
+      "proficiency": "Courant (lu, écrit, parlé)"
+    },
+    "personalityTraits": ["Adaptable", "Organisé", "Flexible", "Collaboratif"]
+  },
+    "projects": {
+      "title": "Mes Projets"
+    },
+    "skills": {
+      "title": "Mes Compétences"
+    },
+    "contact": {
+      "title": "Contactez-moi",
+      "form": {
+        "name": "Votre Nom",
+        "email": "Votre Email",
+        "subject": "Sujet",
+        "message": "Votre Message",
+        "sendButton": "Envoyer le message"
+      },
+      "info": {
+        "email": "Email",
+        "phone": "Téléphone",
+        "location": "Localisation",
+        "availability": "Disponibilité"
+      },
+      "quickResponse": "Réponse rapide",
+      "satisfaction": "Satisfaction",
+      "messageSentSuccess": "Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
+      "messageSentError": "Une erreur est survenue. Veuillez réessayer plus tard.",
+      "sendMessageTitle": "Envoyez-moi un message",
+      "sendMessageDescription": "Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.",
+      "callToActionTitle": "Prêt à démarrer votre projet ?",
+      "callToActionDescription": "Que ce soit pour un site web, une application ou une consultation, je suis là pour vous aider à concrétiser vos idées.",
+      "callNowButton": "Appelez maintenant",
+      "emailMeButton": "Envoyez-moi un email",
+      "availableForProjects": "Disponible pour de nouveaux projets",
+      "emailDescription": "Envoyez-moi un email",
+      "phoneDescription": "Appelez-moi directement",
+      "locationDescription": "Ma localisation",
+      "availabilityDescription": "Heures de travail",
+      "responseTimeInfo": "Je réponds généralement dans les 24 heures. Pour les urgences, appelez-moi directement."
+    },
+    "footer": {
+    "tagline": "Transformer des idées en expériences numériques élégantes avec des technologies web modernes",
+    "socialLinks": {
+      "contact": "Contact",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "copyright": {
+      "name": "Mohamed Yahya Lazar",
+      "year": "2025",
+      "attribution": "Fait avec ❤️"
+    }
+  }
+  }
