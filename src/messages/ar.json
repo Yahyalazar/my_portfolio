@@ -118,38 +118,39 @@
   "skills": {
     "title": "مهاراتي"
   },
-  "contact": {
-    "title": "اتصل بي",
-    "form": {
-      "name": "اسمك",
-      "email": "بريدك الإلكتروني",
-      "subject": "الموضوع",
-      "message": "رسالتك",
-      "sendButton": "إرسال الرسالة"
+    "contact": {
+      "title": "اتصل بي",
+      "description": "هل لديك مشروع في ذهنك؟ سؤال؟ لا تتردد في التواصل معي. سأكون سعيداً بمناقشة أفكارك ورؤية كيف يمكننا التعاون.",
+      "form": {
+        "name": "اسمك",
+        "email": "بريدك الإلكتروني",
+        "subject": "الموضوع",
+        "message": "رسالتك",
+        "sendButton": "إرسال الرسالة"
+      },
+      "info": {
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "location": "الموقع",
+        "availability": "التوفر"
+      },
+      "quickResponse": "استجابة سريعة",
+      "satisfaction": "الرضا",
+      "messageSentSuccess": "تم إرسال الرسالة بنجاح! سأعود إليك في أقرب وقت ممكن.",
+      "messageSentError": "حدث خطأ. الرجاء المحاولة مرة أخرى لاحقًا.",
+      "sendMessageTitle": "أرسل لي رسالة",
+      "sendMessageDescription": "املأ النموذج أدناه وسأرد عليك في أقرب وقت ممكن.",
+      "callToActionTitle": "هل أنت مستعد لبدء مشروعك؟",
+      "callToActionDescription": "سواء كان ذلك لموقع ويب أو تطبيق أو استشارة، أنا هنا لمساعدتك في تحقيق أفكارك.",
+      "callNowButton": "اتصل الآن",
+      "emailMeButton": "أرسل لي بريدًا إلكترونيًا",
+      "availableForProjects": "متاح لمشاريع جديدة",
+      "emailDescription": "أرسل لي بريدًا إلكترونيًا",
+      "phoneDescription": "اتصل بي مباشرة",
+      "locationDescription": "موقعي",
+      "availabilityDescription": "ساعات العمل",
+      "responseTimeInfo": "أرد عادةً في غضون 24 ساعة. للأمور العاجلة، يرجى الاتصال بي مباشرة."
     },
-    "info": {
-      "email": "البريد الإلكتروني",
-      "phone": "الهاتف",
-      "location": "الموقع",
-      "availability": "التوفر"
-    },
-    "quickResponse": "استجابة سريعة",
-    "satisfaction": "الرضا",
-    "messageSentSuccess": "تم إرسال الرسالة بنجاح! سأعود إليك في أقرب وقت ممكن.",
-    "messageSentError": "حدث خطأ. الرجاء المحاولة مرة أخرى لاحقًا.",
-    "sendMessageTitle": "أرسل لي رسالة",
-    "sendMessageDescription": "املأ النموذج أدناه وسأعود إليك في أقرب وقت ممكن.",
-    "callToActionTitle": "هل أنت مستعد لبدء مشروعك؟",
-    "callToActionDescription": "سواء كان ذلك لموقع ويب أو تطبيق أو استشارة، أنا هنا لمساعدتك في تحقيق أفكارك.",
-    "callNowButton": "اتصل الآن",
-    "emailMeButton": "أرسل لي بريدًا إلكترونيًا",
-    "availableForProjects": "متاح لمشاريع جديدة",
-    "emailDescription": "أرسل لي بريدًا إلكترونيًا",
-    "phoneDescription": "اتصل بي مباشرة",
-    "locationDescription": "موقعي",
-    "availabilityDescription": "ساعات العمل",
-    "responseTimeInfo": "أرد عادةً في غضون 24 ساعة. للأمور العاجلة، يرجى الاتصال بي مباشرة."
-  },
   "footer": {
     "tagline": "تحويل الأفكار إلى تجارب رقمية أنيقة باستخدام التكنولوجيا الحديثة للويب",
     "socialLinks": {

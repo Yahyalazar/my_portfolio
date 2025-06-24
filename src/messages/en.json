@@ -120,6 +120,7 @@
   },
   "contact": {
     "title": "Contact Me",
+    "description": "Do you have a project in mind? A question? Don't hesitate to contact me. I would be delighted to discuss your ideas and see how we can collaborate.",
     "form": {
       "name": "Your Name",
       "email": "Your Email",

@@ -120,6 +120,7 @@
     },
     "contact": {
       "title": "Contactez-moi",
+      "description": "Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter de vos idées et de voir comment nous pouvons collaborer.",
       "form": {
         "name": "Votre Nom",
         "email": "Votre Email",
