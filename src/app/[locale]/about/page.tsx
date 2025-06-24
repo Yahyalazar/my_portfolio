@@ -1,122 +1,142 @@
 "use client"
-
+import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
-import { useInView } from "react-intersection-observer"
-import { Navigation } from "@/components/navigation"
-import { Briefcase, GraduationCap, User, Languages } from "lucide-react"
 
-export default function AboutPage() {
-    const t = useTranslations("about")
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+}
 
-    const [experienceRef, experienceInView] = useInView({ threshold: 0.2, triggerOnce: true })
-    const [educationRef, educationInView] = useInView({ threshold: 0.2, triggerOnce: true })
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.2, triggerOnce: true })
+export default function About() {
+  const t = useTranslations('about'); // Use translations for the 'about' namespace
 
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
-            <Navigation />
-            <main className="container mx-auto px-6 md:px-8 lg:px-12 py-20">
-                <section className="max-w-5xl mx-auto space-y-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white text-center animate-fade-in">
-                        {t("title")}
-                    </h1>
+  return (
+    <main className="container mx-auto px-6 md:px-8 lg:px-12 py-20 relative">
+      {/* About Me Section */}
+      <section className="text-center mb-12">
+        <motion.h2 variants={fadeInUp} initial="hidden" animate="visible" className="text-3xl font-bold text-white">
+          {t('title')}
+        </motion.h2>
+      </section>
 
-                    {/* Experience */}
-                    <div
-                        ref={experienceRef}
-                        className={`bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-gray-200 space-y-6 border border-white/20 hover:bg-white/15 transition-all transform ${experienceInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} duration-1000`}
-                    >
-                        <h2 className="text-3xl font-semibold text-pink-400 flex items-center gap-2">
-                            <Briefcase className="w-8 h-8" />
-                            {t("experienceTitle")}
-                        </h2>
-
-                        {[1, 2].map((index) => (
-                            <div key={index} className="space-y-4">
-                                <div className="flex justify-between items-center">
-                                    <h3 className="text-xl font-semibold text-white">
-                                        {t(`experience.job${index}.company`)} - {t(`experience.job${index}.position`)}
-                                    </h3>
-                                    <span className="text-pink-400">{t(`experience.job${index}.date`)}</span>
-                                </div>
-                                <div className="text-gray-300">
-                                    {t(`experience.job${index}.description`)}
-                                    <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
-                                        {t.raw(`experience.job${index}.tech`).map((tech: string, i: number) => (
-                                            <li key={i}>{tech}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Education */}
-                    <div
-                        ref={educationRef}
-                        className={`bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-gray-200 space-y-6 border border-white/20 hover:bg-white/15 transition-all transform ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} duration-1000 delay-200`}
-                    >
-                        <h2 className="text-3xl font-semibold text-pink-400 flex items-center gap-2">
-                            <GraduationCap className="w-8 h-8" />
-                            {t("educationTitle")}
-                        </h2>
-
-                        {[1, 2].map((index) => (
-                            <div key={index} className="space-y-4">
-                                <div className="flex justify-between items-center">
-                                    <h3 className="text-xl font-semibold text-white">
-                                        {t(`education.edu${index}.degree`)}
-                                    </h3>
-                                    <span className="text-pink-400">{t(`education.edu${index}.date`)}</span>
-                                </div>
-                                <div className="text-gray-300">
-                                    {t(`education.edu${index}.institution`)}
-                                    <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
-                                        <li>{t(`education.edu${index}.description`)}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Skills Section */}
-                    <div
-                        ref={skillsRef}
-                        className={`grid md:grid-cols-2 gap-6 transition-all transform ${skillsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} duration-1000 delay-400`}
-                    >
-                        {/* Personality */}
-                        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-gray-200 space-y-4 border border-white/20 hover:bg-white/15 transition-colors">
-                            <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
-                                <User className="w-6 h-6" />
-                                {t("personalityTitle")}
-                            </h2>
-                            <div className="grid grid-cols-2 gap-3">
-                                {t.raw("personalityTraits").map((trait: string, i: number) => (
-                                    <span key={i} className="px-4 py-2 bg-white/5 rounded-lg text-center">
-                                        {trait}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Languages */}
-                        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-gray-200 space-y-4 border border-white/20 hover:bg-white/15 transition-colors">
-                            <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
-                                <Languages className="w-6 h-6" />
-                                {t("languagesTitle")}
-                            </h2>
-                            <div className="space-y-3">
-                                {["arabic", "french", "english"].map((langKey, idx) => (
-                                    <div key={idx} className="flex justify-between items-center">
-                                        <span>{t(`languages.${langKey}`)}</span>
-                                        <span className="text-pink-400">{t("languages.proficiency")}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+      {/* Experience Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
+          {t('experienceTitle')} <span className="text-sm text-gray-400">💼</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {(t.raw('experience') as unknown as Array<{
+            company: string;
+            position: string;
+            date: string;
+            description: string;
+            tech: string[];
+          }>).map((job, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-lg font-bold text-white">{job.company}</h3>
+                  <p className="text-sm text-gray-400">{job.position}</p>
+                </div>
+                <p className="text-sm text-gray-400">{job.date}</p>
+              </div>
+              <ul className="list-disc list-inside text-sm text-gray-400">
+                <li>{job.description}</li>
+                <li>Tech: {job.tech.join(", ")}</li>
+              </ul>
+            </motion.div>
+          ))}
         </div>
-    )
+      </section>
+
+      {/* Education Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
+          {t('educationTitle')} <span className="text-sm text-gray-400">🎓</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {(t.raw('education') as unknown as Array<{
+            degree: string;
+            institution: string;
+            date: string;
+            description: string;
+            project: string;
+          }>).map((edu, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-lg font-bold text-white">{edu.degree}</h3>
+                  <p className="text-sm text-gray-400">{edu.institution}</p>
+                </div>
+                <p className="text-sm text-gray-400">{edu.date}</p>
+              </div>
+              <ul className="list-disc list-inside text-sm text-gray-400">
+                <li>{edu.description}</li>
+                <li>Project: {edu.project}</li>
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Languages and Personality Section */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Languages */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
+            {t('languagesTitle')} <span className="text-sm text-gray-400">🌐</span>
+          </h2>
+          <ul className="mt-4 space-y-2">
+            <li className="flex items-center justify-between">
+              <span>{t('languages.arabic')}</span>
+              <span className="text-pink-400">{t('languages.proficiency')}</span>
+            </li>
+            <li className="flex items-center justify-between">
+              <span>{t('languages.french')}</span>
+              <span className="text-pink-400">{t('languages.proficiency')}</span>
+            </li>
+            <li className="flex items-center justify-between">
+              <span>{t('languages.english')}</span>
+              <span className="text-pink-400">{t('languages.proficiency')}</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Personality */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+          <h2 className="text-2xl font-semibold text-pink-400 flex items-center gap-2">
+            {t('personalityTitle')} <span className="text-sm text-gray-400">🧠</span>
+          </h2>
+          <div className="grid grid-cols-2 gap-2 mt-4">
+            {(t.raw('personalityTraits') as string[]).map((trait, index) => (
+              <motion.button
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full"
+              >
+                {trait}
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
