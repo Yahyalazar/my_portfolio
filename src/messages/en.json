@@ -1,16 +1,16 @@
 {
   "navigation": {
-    "name":"Mohamed Yahya Lazar",
+    "name": "Mohamed Yahya Lazar",
     "title": "Let's Discuss Your Project",
-    "job":"Full Stack Developer",
+    "job": "Full Stack Developer",
     "home": "Home",
     "about": "About",
     "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact",
-    "contactButton":"Contact & CV",
-    "meContact":"Contact Me",
-    "downloadCV":"Download CV"
+    "contactButton": "Contact & CV",
+    "meContact": "Contact Me",
+    "downloadCV": "Download CV"
   },
   "LocaleSwitcher": {
     "label": "Choose Language",
@@ -22,13 +22,13 @@
     "experienceTitle": "Professional Experience",
     "experienceSubtitle": "My journey in web development so far",
     "experienceJobs": {
-     "job1": {
+      "job1": {
         "title": "SkillsnSmart - Frontend Developer",
         "date": "Oct. 2024 - Apr. 2025",
         "description": "Developed the frontend of the Sport Management platform for FRMF.",
         "tech": ["Next.js", "Spring Boot", "MySQL", "Java"]
       },
-      "job2":{
+      "job2": {
         "title": "IRMH - Full Stack Developer",
         "date": "April 2024",
         "description": "Developed and maintained e-commerce websites for selling modern caftans.",
@@ -96,7 +96,8 @@
         "degree": "Diploma in Digital Development - Full Stack Option",
         "institution": "Institut Al ouali Sattat",
         "date": "2024 - 2022",
-        "description": "Specialized training in full stack development / back-end and front-end JavaScript, UI/UX design, cloud computing."      },
+        "description": "Specialized training in full stack development / back-end and front-end JavaScript, UI/UX design, cloud computing."
+      },
       "edu2": {
         "degree": "High School Diploma - Experimental Sciences",
         "institution": "Institut Al ouali Sattat",
@@ -116,7 +117,126 @@
     "title": "My Projects"
   },
   "skills": {
-    "title": "My Skills"
+    "title": "Technologies & Skills",
+    "titre1": "My Skills",
+    "description": "Explore the technologies and tools I use to create modern and performant web solutions. Each competency represents years of learning and hands-on practice.",
+    "frontendDevelopment": {
+      "title": "Frontend Development",
+      "subtitle": "Technologies used to build interactive and responsive web applications.",
+      "skills": {
+        "HTML5": "HTML5",
+        "CSS3": "CSS3",
+        "JavaScript": "JavaScript",
+        "TypeScript": "TypeScript",
+        "React_js": "React.js",
+        "Next_js": "Next.js",
+        "Vue_js": "Vue.js",
+        "Tailwind_CSS": "Tailwind CSS",
+        "Bootstrap": "Bootstrap",
+        "Sass/SCSS": "Sass/SCSS"
+      }
+    },
+    "backendDevelopment": {
+      "title": "Backend Development",
+      "subtitle": "Backend development involves server-side logic and database interactions.",
+      "skills": {
+        "Node_js": "Node.js",
+        "Express_js": "Express.js",
+        "PHP": "PHP",
+        "Laravel": "Laravel",
+        "Symfony": "Symfony",
+        "Spring_Boot":"Spring Boot",
+        "API_REST":"API REST",
+        "GraphQL": "GraphQL",
+
+        "Java": "Java",
+        "Python": "Python",
+        "AWS_SDK": "AWS SDK",
+        "Golang": "Golang"
+      }
+    },
+    "database": {
+      "title": "Database",
+      "subtitle": "Tools and technologies for managing relational and NoSQL databases.",
+      "skills": {
+        "MySQL": "MySQL",
+        "PostgreSQL": "PostgreSQL",
+        "MongoDB": "MongoDB",
+        "Redis": "Redis",
+        "SQLite": "SQLite",
+        "Elasticsearch": "Elasticsearch",
+        "Firebase": "Firebase"
+      }
+    },
+    "devOpsAndTools": {
+      "title": "DevOps & Tools",
+      "subtitle": "Tools for deployment, monitoring, and collaboration.",
+      "skills": {
+        "Git": "Git",
+        "GitHub_Actions": "GitHub Actions",
+        "Docker": "Docker",
+        "AWS_CLI": "AWS CLI",
+        "Jenkins": "Jenkins",
+        "Nginx": "Nginx",
+        "Linux": "Linux",
+        "Terraform": "Terraform"
+      }
+    },
+    "designAndUiUx": {
+      "title": "Design & UI/UX",
+      "subtitle": "Tools for creating visually appealing and user-friendly interfaces.",
+      "skills": {
+        "Figma": "Figma",
+        "Adobe_XD": "Adobe XD",
+        "Photoshop": "Photoshop",
+        "Illustrator": "Illustrator",
+        "UI_Design": "UI Design",
+        "UX_Research": "UX Research",
+        "Prototyping": "Prototyping"
+      }
+    },
+    "mobileAndCrossPlatform": {
+      "title": "Mobile & Cross-Platform",
+      "subtitle": "Technologies for building mobile and cross-platform applications.",
+      "skills": {
+        "React_Native": "React Native",
+        "Flutter": "Flutter",
+        "Ionic": "Ionic",
+        "PWA": "PWA",
+        "Cordova": "Cordova"
+      }
+    },
+    "statistics": {
+      "title": "Skill Statistics",
+      "subtitle": "A snapshot of my technical expertise.",
+      "languages": {
+        "label": "15+",
+        "value": "Languages"
+      },
+      "frameworks": {
+        "label": "20+",
+        "value": "Frameworks"
+      },
+      "databases": {
+        "label": "7+",
+        "value": "Types of Databases"
+      },
+      "tools": {
+        "label": "25+",
+        "value": "Tools"
+      }
+    },
+    "learning": {
+    "title": "Learning",
+    "description": "The tech world is constantly evolving. I stay up-to-date with the latest trends and technologies to provide the best solutions for my clients.",
+    "tech": {
+      "AI/ML": "AI/ML",
+      "Web3": "Web3",
+      "Microservices": "Microservices",
+      "Cloud Computing": "Cloud Computing",
+      "DevOps": "DevOps"
+    }
+  }
   },
   "contact": {
     "title": "Contact Me",

@@ -75,22 +75,22 @@
     "educationTitle": "التعليم",
     "languagesTitle": "اللغات",
     "personalityTitle": "الشخصية",
-    "experience": {
-      "job1": {
-        "company": "SkillsnSmart",
-        "position": "مطور الواجهة الأمامية",
-        "date": "أكتوبر 2024 - أبريل 2025",
-        "description": "قمت بتطوير الواجهة الأمامية لمنصة إدارة الرياضة الخاصة بالاتحاد الملكي المغربي لكرة القدم.",
-        "tech": ["Next.js", "Spring Boot (Java)", "MySQL", "Python"]
+    "experience":  [
+      {
+        "degree": "دبلوم في التطوير الرقمي - تخصص تطوير متكامل",
+        "institution": "معهد الوالي سطات",
+        "date": "2024 - 2022",
+        "description": "تدريب متخصص في التطوير المتكامل / الواجهة الخلفية والأمامية لجافا سكريبت، تصميم واجهة المستخدم، الحوسبة السحابية.",
+        "project": ""
       },
-      "job2": {
-        "company": "IRMH",
-        "position": "مطور ويب متكامل",
-        "date": "أبريل 2024",
-        "description": "قمت بتطوير وصيانة مواقع التجارة الإلكترونية لبيع القفطانات العصرية.",
-        "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
+      {
+        "degree": "شهادة البكالوريا - العلوم التجريبية",
+        "institution": "معهد العلا سطات",
+        "date": "2022 - 2021",
+        "description": "مسار العلوم الدولي",
+        "project": ""
       }
-    },
+    ],
     "education": {
       "edu1": {
         "degree": "دبلوم في التطوير الرقمي - تخصص تطوير متكامل",
@@ -115,8 +115,126 @@
   "projects": {
     "title": "مشاريعي"
   },
-  "skills": {
-    "title": "مهاراتي"
+   "skills": {
+    "title": "التقنيات والمهارات",
+    "titre1": "مهاراتي",
+    "description": "استكشف التكنولوجيات والأدوات التي أستخدمها لإنشاء حلول ويب حديثة وأداء عالية. كل مهارة تمثل سنوات من التعلم والممارسة العملية.",
+    "frontendDevelopment": {
+      "title": "تطوير الواجهة الأمامية",
+      "subtitle": "التكنولوجيات المستخدمة لبناء تطبيقات ويب تفاعلية ومتجاوبة.",
+      "skills": {
+        "HTML5": "HTML5",
+        "CSS3": "CSS3",
+        "JavaScript": "JavaScript",
+        "TypeScript": "TypeScript",
+        "React_js": "React.js",
+        "Next_js": "Next.js",
+        "Vue_js": "Vue.js",
+        "Tailwind_CSS": "Tailwind CSS",
+        "Bootstrap": "Bootstrap",
+        "Sass/SCSS": "Sass/SCSS"
+      }
+    },
+    "backendDevelopment": {
+      "title": "تطوير الخلفية",
+      "subtitle": "تطوير الخلفية يشمل المنطق على الجانب الخادم والتفاعل مع قواعد البيانات.",
+      "skills": {
+        "Node_js": "Node.js",
+        "Express_js": "Express.js",
+        "PHP": "PHP",
+        "Laravel": "Laravel",
+        "Spring_Boot":"Spring Boot",
+        "API_REST":"API REST",
+        "GraphQL": "GraphQL",
+        "Symfony": "Symfony",
+        "Java": "Java",
+        "Python": "Python",
+        "AWS_SDK": "SDK AWS",
+        "Golang": "Golang"
+      }
+    },
+    "database": {
+      "title": "قواعد البيانات",
+      "subtitle": "أدوات وتقنيات لإدارة قواعد البيانات التناظرية وغير التناظرية.",
+      "skills": {
+        "MySQL": "MySQL",
+        "PostgreSQL": "PostgreSQL",
+        "MongoDB": "MongoDB",
+        "Redis": "Redis",
+        "SQLite": "SQLite",
+        "Elasticsearch": "Elasticsearch",
+        "Firebase": "Firebase"
+      }
+    },
+    "devOpsAndTools": {
+      "title": "DevOps وأدوات",
+      "subtitle": "أدوات للنشر، المراقبة، والتعاون.",
+      "skills": {
+        "Git": "Git",
+        "GitHub_Actions": "إجراءات GitHub",
+        "Docker": "Docker",
+        "AWS_CLI": "CLI AWS",
+        "Jenkins": "Jenkins",
+        "Nginx": "Nginx",
+        "Linux": "Linux",
+        "Terraform": "Terraform"
+      }
+    },
+    "designAndUiUx": {
+      "title": "تصميم وواجهات المستخدم / تجربة المستخدم",
+      "subtitle": "أدوات لإنشاء واجهات مستخدم مرئية جذابة وسهلة الاستخدام.",
+      "skills": {
+        "Figma": "Figma",
+        "Adobe_XD": "Adobe XD",
+        "Photoshop": "Photoshop",
+        "Illustrator": "Illustrator",
+        "UI_Design": "تصميم الواجهة",
+        "UX_Research": "بحث تجربة المستخدم",
+        "Prototyping": "النموذج الأولي"
+      }
+    },
+    "mobileAndCrossPlatform": {
+      "title": "المحمول ومتعدد المنصات",
+      "subtitle": "التكنولوجيات لإنشاء التطبيقات المحمولة والمتعددة المنصات.",
+      "skills": {
+        "React_Native": "React Native",
+        "Flutter": "Flutter",
+        "Ionic": "Ionic",
+        "PWA": "تطبيقات الويب التفاعلية",
+        "Cordova": "Cordova"
+      }
+    },
+    "statistics": {
+      "title": "إحصائيات المهارات",
+      "subtitle": "نظرة عامة على خبرتي التقنية.",
+      "languages": {
+        "label": "15+",
+        "value": "لغات برمجة"
+      },
+      "frameworks": {
+        "label": "20+",
+        "value": "إطارات عمل"
+      },
+      "databases": {
+        "label": "7+",
+        "value": "أنواع قواعد البيانات"
+      },
+      "tools": {
+        "label": "25+",
+        "value": "أدوات"
+      }
+    },
+    "learning": {
+    "title": "في تعلم مستمر",
+    "description": "عالم التكنولوجيا يتطور بسرعة. أبقى على اطلاع دائم بالاتجاهات والتقنيات الحديثة لتقديم أفضل الحلول لعملائي.",
+    "tech": {
+      "AI/ML": "الذكاء الاصطناعي / التعلم الآلي",
+      "Web3": "ويب 3",
+      "Microservices": "Microservices",
+      "Cloud Computing": "حوسبة السحابة",
+      "DevOps": "DevOps"
+    }
+  }
   },
     "contact": {
       "title": "اتصل بي",

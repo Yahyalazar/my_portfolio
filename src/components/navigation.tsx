@@ -178,7 +178,7 @@ export function Navigation() {
                         >
                           <Download className="mr-3 h-4 w-4 text-pink-400" />
                           <div>
-                            <p className="font-medium text-white">Télécharger CV</p>
+                            <p className="font-medium text-white">{t("downloadCV")}</p>
                             <p className="text-xs text-gray-400">Format PDF</p>
                           </div>
                         </a>

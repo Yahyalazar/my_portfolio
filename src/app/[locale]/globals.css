@@ -35,7 +35,15 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
-
+body {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+.text-arabic {
+  direction: rtl;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

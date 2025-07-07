@@ -1,12 +1,22 @@
 "use client"
-
 import type React from "react"
-
 import { Navigation } from "@/components/navigation"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Code, Database, Wrench, Palette, Smartphone, Server, Layers, Zap } from "lucide-react"
+import {
+  Code,
+  Database,
+  Wrench,
+  Palette,
+  Smartphone,
+  Server,
+  Layers,
+  Zap,
+} from "lucide-react"
+
+// Assume this is your i18n hook or context selector
+import { useTranslations } from "next-intl" // Or your own translation hook/context
 
 // Animation variants
 const fadeInUp = {
@@ -17,25 +27,6 @@ const fadeInUp = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 }
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-}
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-}
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,7 +37,6 @@ const staggerContainer = {
     },
   },
 }
-
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -55,7 +45,6 @@ const scaleIn = {
     transition: { duration: 0.5, ease: "easeOut" },
   },
 }
-
 const skillItemVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -72,18 +61,17 @@ function AnimatedSection({
 }: {
   children: React.ReactNode
   className?: string
-  variant?: typeof fadeInUp
+  variant?: any
 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variant}
-      className={className}
+      className={`${className} mb-10`}
     >
       {children}
     </motion.div>
@@ -91,99 +79,101 @@ function AnimatedSection({
 }
 
 export default function SkillsPage() {
+  const t = useTranslations("skills") // Get translations under 'skills' namespace
+
   const skillCategories = [
     {
-      category: "Frontend Development",
+      category: t("frontendDevelopment.title"),
       icon: Code,
       color: "blue",
-      description: "Technologies pour créer des interfaces utilisateur modernes et interactives",
+      description: t("frontendDevelopment.subtitle"),
       skills: [
-        { name: "HTML5", level: 95, color: "orange" },
-        { name: "CSS3", level: 90, color: "blue" },
-        { name: "JavaScript", level: 88, color: "yellow" },
-        { name: "TypeScript", level: 85, color: "blue" },
-        { name: "React.js", level: 90, color: "cyan" },
-        { name: "Next.js", level: 88, color: "gray" },
-        { name: "Vue.js", level: 75, color: "green" },
-        { name: "Tailwind CSS", level: 92, color: "teal" },
-        { name: "Bootstrap", level: 85, color: "purple" },
-        { name: "Sass/SCSS", level: 80, color: "pink" },
+        { name: t("frontendDevelopment.skills.HTML5"), level: 95, color: "orange" },
+        { name: t("frontendDevelopment.skills.CSS3"), level: 90, color: "blue" },
+        { name: t("frontendDevelopment.skills.JavaScript"), level: 88, color: "yellow" },
+        { name: t("frontendDevelopment.skills.TypeScript"), level: 85, color: "blue" },
+        { name: t("frontendDevelopment.skills.React_js"), level: 90, color: "cyan" },
+        { name: t("frontendDevelopment.skills.Next_js"), level: 88, color: "gray" },
+        { name: t("frontendDevelopment.skills.Vue_js"), level: 75, color: "green" },
+        { name: t("frontendDevelopment.skills.Tailwind_CSS"), level: 92, color: "teal" },
+        { name: t("frontendDevelopment.skills.Bootstrap"), level: 85, color: "purple" },
+        { name: t("frontendDevelopment.skills.Sass/SCSS"), level: 80, color: "pink" },
       ],
     },
     {
-      category: "Backend Development",
+      category: t("backendDevelopment.title"),
       icon: Server,
       color: "green",
-      description: "Développement côté serveur et gestion des bases de données",
+      description: t("backendDevelopment.subtitle"),
       skills: [
-        { name: "Node.js", level: 85, color: "green" },
-        { name: "Express.js", level: 82, color: "gray" },
-        { name: "PHP", level: 88, color: "purple" },
-        { name: "Laravel", level: 90, color: "red" },
-        { name: "Spring Boot", level: 78, color: "green" },
-        { name: "Java", level: 80, color: "orange" },
-        { name: "Python", level: 75, color: "blue" },
-        { name: "API REST", level: 88, color: "teal" },
-        { name: "GraphQL", level: 70, color: "pink" },
+        { name: t("backendDevelopment.skills.Node_js"), level: 85, color: "green" },
+        { name: t("backendDevelopment.skills.Express_js"), level: 82, color: "gray" },
+        { name: t("backendDevelopment.skills.PHP"), level: 88, color: "purple" },
+        { name: t("backendDevelopment.skills.Laravel"), level: 90, color: "red" },
+        { name: t("backendDevelopment.skills.Spring_Boot"), level: 78, color: "green" },
+        { name: t("backendDevelopment.skills.Java"), level: 80, color: "orange" },
+        { name: t("backendDevelopment.skills.Python"), level: 75, color: "blue" },
+        { name: t("backendDevelopment.skills.API_REST"), level: 88, color: "teal" },
+        { name: t("backendDevelopment.skills.GraphQL"), level: 70, color: "pink" },
       ],
     },
     {
-      category: "Base de Données",
+      category: t("database.title"),
       icon: Database,
       color: "purple",
-      description: "Conception et gestion de bases de données relationnelles et NoSQL",
+      description: t("database.subtitle"),
       skills: [
-        { name: "MySQL", level: 90, color: "blue" },
-        { name: "PostgreSQL", level: 82, color: "blue" },
-        { name: "MongoDB", level: 78, color: "green" },
-        { name: "Redis", level: 75, color: "red" },
-        { name: "SQLite", level: 85, color: "gray" },
-        { name: "Firebase", level: 80, color: "orange" },
-        { name: "Prisma", level: 75, color: "purple" },
+        { name: t("database.skills.MySQL"), level: 90, color: "blue" },
+        { name: t("database.skills.PostgreSQL"), level: 82, color: "blue" },
+        { name: t("database.skills.MongoDB"), level: 78, color: "green" },
+        { name: t("database.skills.Redis"), level: 75, color: "red" },
+        { name: t("database.skills.SQLite"), level: 85, color: "gray" },
+        { name: t("database.skills.Elasticsearch"), level: 70, color: "pink" },
+        { name: t("database.skills.Firebase"), level: 80, color: "orange" },
       ],
     },
     {
-      category: "DevOps & Outils",
+      category: t("devOpsAndTools.title"),
       icon: Wrench,
       color: "orange",
-      description: "Outils de développement, déploiement et collaboration",
+      description: t("devOpsAndTools.subtitle"),
       skills: [
-        { name: "Git", level: 92, color: "orange" },
-        { name: "GitHub", level: 90, color: "gray" },
-        { name: "Docker", level: 78, color: "blue" },
-        { name: "AWS", level: 75, color: "orange" },
-        { name: "Vercel", level: 88, color: "gray" },
-        { name: "Netlify", level: 85, color: "teal" },
-        { name: "Linux", level: 80, color: "yellow" },
-        { name: "Nginx", level: 75, color: "green" },
+        { name: t("devOpsAndTools.skills.Git"), level: 92, color: "orange" },
+        { name: t("devOpsAndTools.skills.GitHub_Actions"), level: 90, color: "gray" },
+        { name: t("devOpsAndTools.skills.Docker"), level: 85, color: "blue" },
+        { name: t("devOpsAndTools.skills.AWS_CLI"), level: 80, color: "orange" },
+        { name: t("devOpsAndTools.skills.Jenkins"), level: 75, color: "gray" },
+        { name: t("devOpsAndTools.skills.Nginx"), level: 78, color: "green" },
+        { name: t("devOpsAndTools.skills.Linux"), level: 85, color: "yellow" },
+        { name: t("devOpsAndTools.skills.Terraform"), level: 75, color: "teal" },
       ],
     },
     {
-      category: "Design & UI/UX",
+      category: t("designAndUiUx.title"),
       icon: Palette,
       color: "pink",
-      description: "Conception d'interfaces et expérience utilisateur",
+      description: t("designAndUiUx.subtitle"),
       skills: [
-        { name: "Figma", level: 88, color: "purple" },
-        { name: "Adobe XD", level: 80, color: "pink" },
-        { name: "Photoshop", level: 75, color: "blue" },
-        { name: "Illustrator", level: 70, color: "orange" },
-        { name: "UI Design", level: 85, color: "purple" },
-        { name: "UX Research", level: 78, color: "teal" },
-        { name: "Prototyping", level: 82, color: "green" },
+        { name: t("designAndUiUx.skills.Figma"), level: 90, color: "purple" },
+        { name: t("designAndUiUx.skills.Adobe_XD"), level: 80, color: "pink" },
+        { name: t("designAndUiUx.skills.Photoshop"), level: 85, color: "blue" },
+        { name: t("designAndUiUx.skills.Illustrator"), level: 75, color: "orange" },
+        { name: t("designAndUiUx.skills.UI_Design"), level: 88, color: "purple" },
+        { name: t("designAndUiUx.skills.UX_Research"), level: 82, color: "teal" },
+        { name: t("designAndUiUx.skills.Prototyping"), level: 80, color: "green" },
       ],
     },
     {
-      category: "Mobile & Cross-Platform",
+      category: t("mobileAndCrossPlatform.title"),
       icon: Smartphone,
       color: "teal",
-      description: "Développement d'applications mobiles et multiplateformes",
+      description: t("mobileAndCrossPlatform.subtitle"),
       skills: [
-        { name: "React Native", level: 80, color: "cyan" },
-        { name: "Flutter", level: 70, color: "blue" },
-        { name: "Ionic", level: 75, color: "blue" },
-        { name: "PWA", level: 85, color: "purple" },
-        { name: "Cordova", level: 70, color: "gray" },
+        { name: t("mobileAndCrossPlatform.skills.React_Native"), level: 85, color: "cyan" },
+        { name: t("mobileAndCrossPlatform.skills.Flutter"), level: 80, color: "blue" },
+        { name: t("mobileAndCrossPlatform.skills.Ionic"), level: 75, color: "blue" },
+        { name: t("mobileAndCrossPlatform.skills.PWA"), level: 88, color: "purple" },
+        { name: t("mobileAndCrossPlatform.skills.Cordova"), level: 70, color: "gray" },
       ],
     },
   ]
@@ -276,19 +266,19 @@ export default function SkillsPage() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             />
-            Technologies & Compétences
+            {t("title")}
           </motion.div>
-
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
-            Mes Compétences
+            {t("titre1")}
           </motion.h1>
-
-          <motion.p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" variants={fadeInUp}>
-            Découvrez les technologies et outils que je maîtrise pour créer des solutions web modernes et performantes.
-            Chaque compétence représente des années d'apprentissage et de pratique.
+          <motion.p
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
+            {t("description")}
           </motion.p>
         </AnimatedSection>
 
@@ -321,11 +311,10 @@ export default function SkillsPage() {
                       <category.icon className="h-8 w-8 text-white" />
                     </motion.div>
                     <div>
-                      <h2 className="text-2xl font-bold text-white mb-2">{category.category}</h2>
-                      <p className="text-gray-400 text-sm">{category.description}</p>
+                      <h2 className="text-arabic text-2xl font-bold text-white mb-2">{category.category}</h2>
+                      <p className=" text-arabic text-gray-400 text-sm">{category.description}</p>
                     </div>
                   </div>
-
                   {/* Skills List */}
                   <motion.div
                     className="space-y-4"
@@ -377,10 +366,9 @@ export default function SkillsPage() {
             variants={fadeInUp}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4">Statistiques de Compétences</h3>
-              <p className="text-gray-300 text-lg">Un aperçu de mon expertise technique</p>
+              <h3 className="text-3xl font-bold text-white mb-4">{t("statistics.title")}</h3>
+              <p className="text-gray-300 text-lg">{t("statistics.subtitle")}</p>
             </div>
-
             <motion.div
               className="grid grid-cols-2 md:grid-cols-4 gap-8"
               variants={staggerContainer}
@@ -389,10 +377,10 @@ export default function SkillsPage() {
               viewport={{ once: true }}
             >
               {[
-                { icon: Code, label: "Langages", value: "15+", color: "blue" },
-                { icon: Layers, label: "Frameworks", value: "20+", color: "purple" },
-                { icon: Database, label: "Bases de Données", value: "7+", color: "green" },
-                { icon: Wrench, label: "Outils", value: "25+", color: "orange" },
+                { icon: Code, label: t("statistics.languages.value"), value: "15+", color: "blue" },
+                { icon: Layers, label: t("statistics.frameworks.value"), value: "20+", color: "purple" },
+                { icon: Database, label: t("statistics.databases.value"), value: "7+", color: "green" },
+                { icon: Wrench, label: t("statistics.tools.value"), value: "25+", color: "orange" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -437,25 +425,26 @@ export default function SkillsPage() {
             >
               <Zap className="h-8 w-8 text-white" />
             </motion.div>
-            <h3 className="text-3xl font-bold text-white mb-4">Toujours en Apprentissage</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">{t("learning.title")}</h3>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Le monde de la technologie évolue rapidement. Je reste constamment à jour avec les dernières tendances et
-              technologies pour offrir les meilleures solutions à mes clients.
+              {t("learning.description")}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {["AI/ML", "Web3", "Microservices", "Cloud Computing", "DevOps"].map((tech, index) => (
-                <motion.span
-                  key={index}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-500/20 to-teal-600/20 border border-emerald-500/30 rounded-full text-emerald-300 font-medium"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  viewport={{ once: true }}
-                >
-                  {tech}
-                </motion.span>
-              ))}
+              {[t("learning.tech.AI/ML"), t("learning.tech.Web3"), t("learning.tech.Microservices"), t("learning.tech.Cloud Computing"), t("learning.tech.DevOps")].map(
+                (tech, index) => (
+                  <motion.span
+                    key={index}
+                    className="px-6 py-3 bg-gradient-to-r from-emerald-500/20 to-teal-600/20 border border-emerald-500/30 rounded-full text-emerald-300 font-medium"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    viewport={{ once: true }}
+                  >
+                    {tech}
+                  </motion.span>
+                )
+              )}
             </div>
           </motion.div>
         </AnimatedSection>

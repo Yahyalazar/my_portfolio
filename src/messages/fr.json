@@ -1,74 +1,75 @@
 {
   "navigation": {
-    "name":"Mohamed Yahya Lazar",
+    "name": "Mohamed Yahya Lazar",
     "title": "Discutons de votre projet",
-    "job":"Développeur Full Stack",
+    "job": "Développeur Full Stack",
     "home": "Accueil",
     "about": "À Propos",
     "projects": "Projets",
     "skills": "Compétences",
     "contact": "Contact",
-    "contactButton":"Contact & CV",
-    "meContact":"Me Contacter",
-    "downloadCV":"Télécharger CV"
+    "contactButton": "Contact & CV",
+    "meContact": "Me Contacter",
+    "downloadCV": "Télécharger CV"
   },
-    "LocaleSwitcher":{
-    "label":"Choisir une langue",
-    "locale":"{locale, select, en {anglais} fr {français} ar {arabe} other {unknown} }"
-    },
-    "home": {
-      "active":"Disponible pour de nouveaux projets",
-      "title": "Mohamed Yahya Lazar",
-      "experienceTitle":"Expérience Professionnelle",
-      "experienceSubtitle":"Mon parcours dans le développement web jusqu'à présent",
-      "experienceJobs": {
-      "job1":{
-        "title":"SkillsnSmart - Développeur Frontend",
-        "date":"Oct. 2024 - Avr. 2025",
+  "LocaleSwitcher": {
+    "label": "Choisir une langue",
+    "locale": "{locale, select, en {anglais} fr {français} ar {arabe} other {unknown} }"
+  },
+  "home": {
+    "active": "Disponible pour de nouveaux projets",
+    "title": "Mohamed Yahya Lazar",
+    "experienceTitle": "Expérience Professionnelle",
+    "experienceSubtitle": "Mon parcours dans le développement web jusqu'à présent",
+    "experienceJobs": {
+      "job1": {
+        "title": "SkillsnSmart - Développeur Frontend",
+        "date": "Oct. 2024 - Avr. 2025",
         "description": "Développé la partie frontend de la plateforme Sport Management pour la FRMF.",
         "tech": ["Next.js", "Spring Boot", "MySQL", "Java"]
       },
-      "job2":{
+      "job2": {
         "title": "IRMH - Développeur Full Stack",
         "date": "Avril 2024",
         "description": "Développé et maintenu des sites e-commerce pour la vente de caftans modernes.",
         "tech": ["Laravel", "PHP", "MySQL", "CRUD"]
       }
     },
-      "skillsTitle":"Compétences Techniques",
-      "skillsSubtitle":"Technologies que j'utilise",
-      "skillsCategories":{
-        "frontend":"Frontend",
-        "backend":"Backend",
-        "tools": "Outils"
+    "skillsTitle": "Compétences Techniques",
+    "skillsSubtitle": "Technologies que j'utilise",
+    "skillsCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils"
+    },
+    "contactTitle": "Restez en Contact",
+    "contactSubtitle": "N'hésitez pas à me contacter pour discuter de vos projets.",
+    "contactInfo": {
+      "phone": {
+        "label": "Téléphone",
+        "value": "+212 691 844 523"
       },
-      "contactTitle":"Restez en Contact",
-      "contactSubtitle":"N'hésitez pas à me contacter pour discuter de vos projets.",
-      "contactInfo":{
-        "phone":{
-          "label": "Téléphone",
-          "value": "+212 691 844 523"
-        },
-        "email": {
-          "label": "Email",
-          "value": "mohamedyahyalazar@gmail.com"},
-          "github": {
-        "label":"GitHub",
+      "email": {
+        "label": "Email",
+        "value": "mohamedyahyalazar@gmail.com"
+      },
+      "github": {
+        "label": "GitHub",
         "value": "github.com/Yahyalazar"
       },
       "location": {
-        "label":"Localisation",
+        "label": "Localisation",
         "value": "Settat - Casablanca, Morocco"
       }
-        },
-      "subtitle": "Développeur Full Stack Web",
-      "description": "Passionné par les technologies modernes, je développe des applications web performantes avec Next.js, ReactJS, Laravel et MySQL.",
-      "projectsButton": "Découvrir Mes Projets",
-      "downloadCV": "Télécharger CV",
-      "skillsSection": "Compétences Techniques",
-      "contactSection": "Restez en Contact"
     },
-    "about": {
+    "subtitle": "Développeur Full Stack Web",
+    "description": "Passionné par les technologies modernes, je développe des applications web performantes avec Next.js, ReactJS, Laravel et MySQL.",
+    "projectsButton": "Découvrir Mes Projets",
+    "downloadCV": "Télécharger CV",
+    "skillsSection": "Compétences Techniques",
+    "contactSection": "Restez en Contact"
+  },
+  "about": {
     "title": "À Propos de Moi",
     "experienceTitle": "Expérience Professionnelle",
     "educationTitle": "Formation",
@@ -112,46 +113,164 @@
     },
     "personalityTraits": ["Adaptable", "Organisé", "Flexible", "Collaboratif"]
   },
-    "projects": {
-      "title": "Mes Projets"
+  "projects": {
+    "title": "Mes Projets"
+  },
+  "skills": {
+    "title": "Technologies & Compétences",
+    "titre1": "Mes Compétences",
+    "description": "Découvrez les technologies et outils que j'utilise pour créer des solutions web modernes et performantes. Chaque compétence représente des années d'apprentissage et de pratique.",
+    "frontendDevelopment": {
+      "title": "Développement Frontend",
+      "subtitle": "Technologies utilisées pour construire des applications web interactives et réactives.",
+      "skills": {
+        "HTML5": "HTML5",
+        "CSS3": "CSS3",
+        "JavaScript": "JavaScript",
+        "TypeScript": "TypeScript",
+        "React_js": "React.js",
+        "Next_js": "Next.js",
+        "Vue_js": "Vue.js",
+        "Tailwind_CSS": "Tailwind CSS",
+        "Bootstrap": "Bootstrap",
+        "Sass/SCSS": "Sass/SCSS"
+      }
     },
-    "skills": {
-      "title": "Mes Compétences"
+    "backendDevelopment": {
+      "title": "Développement Backend",
+      "subtitle": "Le développement backend implique la logique côté serveur et les interactions avec les bases de données.",
+      "skills": {
+        "Node_js": "Node.js",
+        "Express_js": "Express.js",
+        "PHP": "PHP",
+        "Laravel": "Laravel",
+        "Spring_Boot":"Spring Boot",
+        "API_REST":"API REST",
+        "GraphQL": "GraphQL",
+        "Symfony": "Symfony",
+        "Java": "Java",
+        "Python": "Python",
+        "AWS_SDK": "AWS SDK",
+        "Golang": "Golang"
+      }
     },
-    "contact": {
-      "title": "Contactez-moi",
-      "description": "Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter de vos idées et de voir comment nous pouvons collaborer.",
-      "form": {
-        "name": "Votre Nom",
-        "email": "Votre Email",
-        "subject": "Sujet",
-        "message": "Votre Message",
-        "sendButton": "Envoyer le message"
+    "database": {
+      "title": "Base de Données",
+      "subtitle": "Outils et technologies pour la gestion des bases de données relationnelles et NoSQL.",
+      "skills": {
+        "MySQL": "MySQL",
+        "PostgreSQL": "PostgreSQL",
+        "MongoDB": "MongoDB",
+        "Redis": "Redis",
+        "SQLite": "SQLite",
+        "Elasticsearch": "Elasticsearch",
+        "Firebase": "Firebase"
+      }
+    },
+    "devOpsAndTools": {
+      "title": "DevOps & Outils",
+      "subtitle": "Outils pour le déploiement, le monitoring et la collaboration.",
+      "skills": {
+        "Git": "Git",
+        "GitHub_Actions": "GitHub Actions",
+        "Docker": "Docker",
+        "AWS_CLI": "AWS CLI",
+        "Jenkins": "Jenkins",
+        "Nginx": "Nginx",
+        "Linux": "Linux",
+        "Terraform": "Terraform"
+      }
+    },
+    "designAndUiUx": {
+      "title": "Design & UI/UX",
+      "subtitle": "Outils pour créer des interfaces visuellement attrayantes et conviviales.",
+      "skills": {
+        "Figma": "Figma",
+        "Adobe_XD": "Adobe XD",
+        "Photoshop": "Photoshop",
+        "Illustrator": "Illustrator",
+        "UI_Design": "Conception UI",
+        "UX_Research": "Recherche UX",
+        "Prototyping": "Prototypage"
+      }
+    },
+    "mobileAndCrossPlatform": {
+      "title": "Mobile & Cross-Plateforme",
+      "subtitle": "Technologies pour développer des applications mobiles et multiplateformes.",
+      "skills": {
+        "React_Native": "React Native",
+        "Flutter": "Flutter",
+        "Ionic": "Ionic",
+        "PWA": "PWA",
+        "Cordova": "Cordova"
+      }
+    },
+    "statistics": {
+      "title": "Statistiques de Compétences",
+      "subtitle": "Un aperçu de mon expertise technique.",
+      "languages": {
+        "label": "15+",
+        "value": "Langages"
       },
-      "info": {
-        "email": "Email",
-        "phone": "Téléphone",
-        "location": "Localisation",
-        "availability": "Disponibilité"
+      "frameworks": {
+        "label": "20+",
+        "value": "Cadres"
       },
-      "quickResponse": "Réponse rapide",
-      "satisfaction": "Satisfaction",
-      "messageSentSuccess": "Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
-      "messageSentError": "Une erreur est survenue. Veuillez réessayer plus tard.",
-      "sendMessageTitle": "Envoyez-moi un message",
-      "sendMessageDescription": "Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.",
-      "callToActionTitle": "Prêt à démarrer votre projet ?",
-      "callToActionDescription": "Que ce soit pour un site web, une application ou une consultation, je suis là pour vous aider à concrétiser vos idées.",
-      "callNowButton": "Appelez maintenant",
-      "emailMeButton": "Envoyez-moi un email",
-      "availableForProjects": "Disponible pour de nouveaux projets",
-      "emailDescription": "Envoyez-moi un email",
-      "phoneDescription": "Appelez-moi directement",
-      "locationDescription": "Ma localisation",
-      "availabilityDescription": "Heures de travail",
-      "responseTimeInfo": "Je réponds généralement dans les 24 heures. Pour les urgences, appelez-moi directement."
+      "databases": {
+        "label": "7+",
+        "value": "Types de Bases de Données"
+      },
+      "tools": {
+        "label": "25+",
+        "value": "Outils"
+      }
     },
-    "footer": {
+  "learning": {
+    "title": "En Apprentissage",
+    "description": "Le monde de la technologie évolue rapidement. Je reste constamment à jour avec les dernières tendances et technologies pour offrir les meilleures solutions à mes clients.",
+    "tech": {
+      "AI/ML": "IA/Machine Learning",
+      "Web3": "Web3",
+      "Microservices": "Microservices",
+      "Cloud Computing": "Calcul Cloud",
+      "DevOps": "DevOps"
+    }
+  }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter de vos idées et de voir comment nous pouvons collaborer.",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "subject": "Sujet",
+      "message": "Votre Message",
+      "sendButton": "Envoyer le message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Localisation",
+      "availability": "Disponibilité"
+    },
+    "quickResponse": "Réponse rapide",
+    "satisfaction": "Satisfaction",
+    "messageSentSuccess": "Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
+    "messageSentError": "Une erreur est survenue. Veuillez réessayer plus tard.",
+    "sendMessageTitle": "Envoyez-moi un message",
+    "sendMessageDescription": "Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.",
+    "callToActionTitle": "Prêt à démarrer votre projet ?",
+    "callToActionDescription": "Que ce soit pour un site web, une application ou une consultation, je suis là pour vous aider à concrétiser vos idées.",
+    "callNowButton": "Appelez maintenant",
+    "emailMeButton": "Envoyez-moi un email",
+    "availableForProjects": "Disponible pour de nouveaux projets",
+    "emailDescription": "Envoyez-moi un email",
+    "phoneDescription": "Appelez-moi directement",
+    "locationDescription": "Ma localisation",
+    "availabilityDescription": "Heures de travail",
+    "responseTimeInfo": "Je réponds généralement dans les 24 heures. Pour les urgences, appelez-moi directement."
+  },
+  "footer": {
     "tagline": "Transformer des idées en expériences numériques élégantes avec des technologies web modernes",
     "socialLinks": {
       "contact": "Contact",
@@ -164,4 +283,4 @@
       "attribution": "Fait avec ❤️"
     }
   }
-  }
+}
