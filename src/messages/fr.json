@@ -114,7 +114,22 @@
     "personalityTraits": ["Adaptable", "Organisé", "Flexible", "Collaboratif"]
   },
   "projects": {
-    "title": "Mes Projets"
+      "title": "Mes Projets",
+      "project1": {
+        "description": "Un site web de photographie présentant diverses catégories, notamment la nature, les enfants, les voyages, l'équipement, la culture et la photographie sportive."
+      },
+      "project2": {
+        "description": "Un site web portfolio personnel moderne et responsive construit avec Next.js et Tailwind CSS, présentant des composants UI animés, des vitrines de projets, une visualisation des compétences et des fonctionnalités de contact. Conçu en tenant compte de l'accessibilité et des performances."
+      },
+      "project3": {
+        "description": "Une application de liste de tâches simple et intuitive qui vous aide à organiser et à suivre vos activités quotidiennes."
+      },
+      "project4": {
+        "description": "Un site e-commerce dédié à la vente de vêtements à la mode pour femmes, hommes et enfants avec une collection variée de styles et de tailles."
+      },
+      "project5": {
+        "description": "Un site web d'établissement médical de pointe présentant des services de santé complets, une équipe médicale professionnelle et des soins centrés sur le patient. Les fonctionnalités comprennent la prise de rendez-vous, des informations sur les services et des ressources de santé."
+      }
   },
   "skills": {
     "title": "Technologies & Compétences",
@@ -144,8 +159,8 @@
         "Express_js": "Express.js",
         "PHP": "PHP",
         "Laravel": "Laravel",
-        "Spring_Boot":"Spring Boot",
-        "API_REST":"API REST",
+        "Spring_Boot": "Spring Boot",
+        "API_REST": "API REST",
         "GraphQL": "GraphQL",
         "Symfony": "Symfony",
         "Java": "Java",
@@ -225,17 +240,17 @@
         "value": "Outils"
       }
     },
-  "learning": {
-    "title": "En Apprentissage",
-    "description": "Le monde de la technologie évolue rapidement. Je reste constamment à jour avec les dernières tendances et technologies pour offrir les meilleures solutions à mes clients.",
-    "tech": {
-      "AI/ML": "IA/Machine Learning",
-      "Web3": "Web3",
-      "Microservices": "Microservices",
-      "Cloud Computing": "Calcul Cloud",
-      "DevOps": "DevOps"
+    "learning": {
+      "title": "En Apprentissage",
+      "description": "Le monde de la technologie évolue rapidement. Je reste constamment à jour avec les dernières tendances et technologies pour offrir les meilleures solutions à mes clients.",
+      "tech": {
+        "AI/ML": "IA/Machine Learning",
+        "Web3": "Web3",
+        "Microservices": "Microservices",
+        "Cloud Computing": "Calcul Cloud",
+        "DevOps": "DevOps"
+      }
     }
-  }
   },
   "contact": {
     "title": "Contactez-moi",

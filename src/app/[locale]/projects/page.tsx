@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import Image from "next/image"
 import { BriefcaseMedicalIcon, Camera, ExternalLink, ListCheckIcon, ShoppingBag, User } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useTranslations } from "next-intl"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -20,10 +21,11 @@ const staggerContainer = {
 }
 
 export default function ProjectsPage() {
+  const t= useTranslations("projects");
   const projects = [
     {
       title: "Photography website",
-      description: "Un site web de photographie présentant diverses catégories, notamment la nature, les enfants, les voyages, l'équipement, la culture et la photographie sportive.",
+      description: t("project1.description"),
       technologies: ["HTML", "CSS"],
       image: "/images/image1.png",
       link: "https://project-photography-ten.vercel.app/#header",
@@ -31,7 +33,7 @@ export default function ProjectsPage() {
     },
     {
         title: "my_portfolio",
-        description: "A modern, responsive personal portfolio website built with Next.js and Tailwind CSS, featuring animated UI components, project showcases, skills visualization, and contact functionality. Designed with accessibility and performance in mind.",
+        description: t("project2.description"),
         technologies: ["Nextjs", "Taillwind"],
         image: "/images/portfolio.png",
         link: "https://portfolio-mohamed-yahya-lazar.vercel.app/",
@@ -39,7 +41,7 @@ export default function ProjectsPage() {
       },
       {
         title: "to_do_list",
-        description: "Une application de liste de tâches simple et intuitive qui vous aide à organiser et à suivre vos activités quotidiennes.",
+        description: t("project3.description"),
         technologies: ["HTML", "CSS","JS"],
         image: "/images/to_do.png",
         link: "https://to-do-list-one-psi-84.vercel.app/",
@@ -47,7 +49,7 @@ export default function ProjectsPage() {
       },
       {
         title: "Shopper",
-        description: "Un site e-commerce dédié à la vente de vêtements à la mode pour femmes, hommes et enfants avec une collection variée de styles et de tailles.",
+        description: t("project4.description"),
         technologies: ["HTML", "CSS","JS"],
         image: "/images/shopper.png",
         link: "https://github.com/NadiaMourtaki/https---github.com-NadiaMourtaki-Ecom_app.git",
@@ -55,7 +57,7 @@ export default function ProjectsPage() {
       },
       {
         title: "ZeeCare Medical Institute",
-        description: "Un site web d'établissement médical de pointe présentant des services de santé complets, une équipe médicale professionnelle et des soins centrés sur le patient. Les fonctionnalités comprennent la prise de rendez-vous, des informations sur les services et des ressources de santé.",
+        description: t("project5.description"),
         technologies: ["Reactjs","NodeJs", "ExpressJs","Taillwindcss","MongoDB"],
         image: "/images/hospital.png",
         link: "https://github.com/Yahyalazar/ZeeCare-Medical-Institute.git",
@@ -74,7 +76,7 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Projects
+          {t("title")}
         </motion.h1>
         
         <motion.div 

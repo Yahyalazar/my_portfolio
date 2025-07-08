@@ -114,7 +114,22 @@
     "personalityTraits": ["Adaptable", "Organized", "Flexible", "Collaborative"]
   },
   "projects": {
-    "title": "My Projects"
+    "title": "My Projects",
+    "project1": {
+        "description": "A photography website showcasing various categories including nature, children, travel, equipment, culture and sports photography."
+      },
+      "project2": {
+        "description": "A modern and responsive personal portfolio website built with Next.js and Tailwind CSS, featuring animated UI components, project showcases, skills visualization, and contact features. Designed with accessibility and performance in mind."
+      },
+      "project3": {
+        "description": "A simple and intuitive task list application that helps you organize and track your daily activities."
+      },
+      "project4": {
+        "description": "An e-commerce website dedicated to selling fashionable clothing for women, men and children with a varied collection of styles and sizes."
+      },
+      "project5": {
+        "description": "A cutting-edge medical facility website showcasing comprehensive health services, professional medical team, and patient-centered care. Features include appointment booking, service information, and health resources."
+      }
   },
   "skills": {
     "title": "Technologies & Skills",
