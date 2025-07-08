@@ -1,5 +1,4 @@
 "use client"
-
 import type React from "react"
 import { Navigation } from "@/components/navigation"
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, Globe, Star } from "lucide-react"
@@ -7,6 +6,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 // Animation variants
 const fadeInUp = {
@@ -17,7 +17,6 @@ const fadeInUp = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 }
-
 const fadeInLeft = {
   hidden: { opacity: 0, x: -60 },
   visible: {
@@ -26,7 +25,6 @@ const fadeInLeft = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 }
-
 const fadeInRight = {
   hidden: { opacity: 0, x: 60 },
   visible: {
@@ -35,7 +33,6 @@ const fadeInRight = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 }
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,7 +43,6 @@ const staggerContainer = {
     },
   },
 }
-
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -63,11 +59,10 @@ function AnimatedSection({
 }: { 
   children: React.ReactNode;
   className?: string;
-  variant?: typeof fadeInUp;
+  variant?: any;
 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
     <motion.div
       ref={ref}
@@ -82,6 +77,7 @@ function AnimatedSection({
 }
 
 export default function ContactPage() {
+  const t = useTranslations("contact")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -100,16 +96,14 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
-
     try {
-      const response = await fetch('https://formspree.io/f/mrbkzdbq', {
+      const response = await fetch('https://formspree.io/f/mrbkzdbq ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       })
-
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: "", email: "", subject: "", message: "" })
@@ -126,31 +120,31 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      title: t("info.email"),
       value: "mohamedyahyalazar@gmail.com",
       href: "mailto:mohamedyahyalazar@gmail.com",
-      description: "Envoyez-moi un email",
+      description: t("emailDescription"),
     },
     {
       icon: Phone,
-      title: "Téléphone",
+      title: t("info.phone"),
       value: "+212 691 844 523",
       href: "tel:+212691844523",
-      description: "Appelez-moi directement",
+      description: t("phoneDescription"),
     },
     {
       icon: MapPin,
-      title: "Localisation",
+      title: t("info.location"),
       value: "Settat - Casablanca, Maroc",
       href: "#",
-      description: "Ma localisation",
+      description: t("locationDescription"),
     },
     {
       icon: Clock,
-      title: "Disponibilité",
+      title: t("info.availability"),
       value: "Lun - Ven, 9h - 18h",
       href: "#",
-      description: "Heures de travail",
+      description: t("availabilityDescription"),
     },
   ]
 
@@ -198,19 +192,19 @@ export default function ContactPage() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             />
-            Disponible pour de nouveaux projets
+            {t("availableForProjects")}
           </motion.div>
-
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
-            Contactez-moi
+            {t("title")}
           </motion.h1>
-
-          <motion.p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" variants={fadeInUp}>
-            Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Je serais ravi de discuter de vos
-            idées et de voir comment nous pouvons collaborer.
+          <motion.p
+            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
+            {t("description")}
           </motion.p>
         </AnimatedSection>
 
@@ -299,8 +293,8 @@ export default function ContactPage() {
                   animate="visible"
                 >
                   {[
-                    { icon: MessageCircle, label: "Réponse rapide", value: "< 24h" },
-                    { icon: Star, label: "Satisfaction", value: "100%" },
+                    { icon: MessageCircle, label: t("quickResponse"), value: "< 24h" },
+                    { icon: Star, label: t("satisfaction"), value: "100%" },
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
@@ -330,12 +324,11 @@ export default function ContactPage() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-white mb-4">Envoyez-moi un message</h2>
+                  <h2 className="text-3xl font-bold text-white mb-4">{t("sendMessageTitle")}</h2>
                   <p className="text-gray-300">
-                    Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
+                    {t("sendMessageDescription")}
                   </p>
                 </div>
-
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input
@@ -343,7 +336,7 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Votre nom"
+                      placeholder={t("form.name")}
                       required
                       className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent backdrop-blur-lg"
                     />
@@ -352,7 +345,7 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Votre email"
+                      placeholder={t("form.email")}
                       required
                       className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent backdrop-blur-lg"
                     />
@@ -362,7 +355,7 @@ export default function ContactPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    placeholder="Sujet"
+                    placeholder={t("form.subject")}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent backdrop-blur-lg"
                   />
@@ -370,7 +363,7 @@ export default function ContactPage() {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Votre message"
+                    placeholder={t("form.message")}
                     required
                     rows={6}
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent backdrop-blur-lg resize-none"
@@ -387,33 +380,31 @@ export default function ContactPage() {
                           animate={{ rotate: 360 }}
                           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                         />
-                        <span>Envoi en cours...</span>
+                        <span>{t("form.sending")}</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>Envoyer le message</span>
+                        <span>{t("form.sendButton")}</span>
                       </>
                     )}
                   </button>
-
                   {submitStatus === 'success' && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200"
                     >
-                      Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+                      {t("messageSentSuccess")}
                     </motion.div>
                   )}
-
                   {submitStatus === 'error' && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200"
                     >
-                      Une erreur est survenue. Veuillez réessayer plus tard.
+                      {t("messageSentError")}
                     </motion.div>
                   )}
                 </form>
@@ -423,48 +414,47 @@ export default function ContactPage() {
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Globe className="h-5 w-5 text-pink-400" />
                     <span className="text-sm">
-                      Je réponds généralement dans les 24 heures. Pour les urgences, appelez-moi directement.
+                      {t("responseTimeInfo")}
                     </span>
                   </div>
-                  
                 </motion.div>
               </motion.div>
+
               <div className="relative h-96 w-full flex gap-4">
-                      <motion.div 
-                        className="relative w-1/2 h-full"
-                        variants={fadeInLeft}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <Image
-                          src="/images/contact-illustration.png"
-                          alt="Contact Illustration"
-                          fill
-                          className="object-contain object-left"
-                          priority
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      </motion.div>
-                      <motion.div 
-                        className="relative w-1/2 h-full"
-                        variants={fadeInRight}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <Image
-                          src="/images/coding.png"
-                          alt="Coding Illustration"
-                          fill
-                          className="object-contain object-right"
-                          priority
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      </motion.div>
-                    </div>
+                <motion.div 
+                  className="relative w-1/2 h-full"
+                  variants={fadeInLeft}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <Image
+                    src="/images/contact-illustration.png"
+                    alt="Contact Illustration"
+                    fill
+                    className="object-contain object-left"
+                    priority
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
+                <motion.div 
+                  className="relative w-1/2 h-full"
+                  variants={fadeInRight}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <Image
+                    src="/images/coding.png"
+                    alt="Coding Illustration"
+                    fill
+                    className="object-contain object-right"
+                    priority
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
+              </div>
             </AnimatedSection>
-            
           </div>
         </div>
 
@@ -474,10 +464,9 @@ export default function ContactPage() {
             className="text-center bg-gradient-to-r from-pink-500/10 to-purple-600/10 backdrop-blur-sm p-12 rounded-3xl border border-white/20"
             variants={fadeInUp}
           >
-            <h3 className="text-3xl font-bold text-white mb-4">Prêt à démarrer votre projet ?</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">{t("callToActionTitle")}</h3>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Que ce soit pour un site web, une application ou une consultation, je suis là pour vous aider à
-              concrétiser vos idées.
+              {t("callToActionDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -491,7 +480,7 @@ export default function ContactPage() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Phone className="h-5 w-5" />
-                <span>Appelez maintenant</span>
+                <span>{t("callNowButton")}</span>
               </motion.a>
               <motion.a
                 href="mailto:mohamedyahyalazar@gmail.com"
@@ -504,7 +493,7 @@ export default function ContactPage() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Mail className="h-5 w-5" />
-                <span>Envoyer un email</span>
+                <span>{t("emailMeButton")}</span>
               </motion.a>
             </div>
           </motion.div>
